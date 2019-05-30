@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Tiempos de ejecución</title>
+  <link rel="stylesheet" href="./estilos/estilo.css">
+  <link href='https://fonts.googleapis.com/css?family=Coustard' rel='stylesheet'>
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script>
+</head>
+<body>
+<h1>Tiempos de ejecución</h1>
+<h2>Casos iterativos</h2>
+
+<p>Tomado de la explicación de la práctica correspondiente a la materia <em>Algoritmos y Estructuras de Datos</em> de la <em>Facultad de Informática  - Universidad Nacional de la Plata</em>, dictada en el primer cuatrimestre de 2019.</p>
+
+<h3>Pasos:</h3>
+<ol>
+  <li>Buscar las líneas de código cuyo <em>tiempo de ejecución es constante</em>. Estas son en general las asignaciones, operaciones lógicas/matemáticas, etc.</li>
+  <li>Buscar los <em>bucles</em> (for y en algunos casos while), ellos se corresponden a sumatorias. <em>¡ Tener cuidado con el incremento de la variable !</em></li>
+  <li>Armar con las partes anteriores la función <em>T(n)</em></li>
+  <li>Procesar algebraicamente T(n) para obtener <em>O(n)</em></li>
+</ol>
+<h3>Ejemplo:</h3>
+<p>Código del ejercicio 6.a de la práctica 5</p>
+
+<code><pre>
+1 public static void uno (int n) {
+2      int i, j, k ;
+3      int [] [] a, b, c;
+4      a = new int [n] [n];
+5      b = new int [n] [n];
+6      c = new int [n] [n];
+7      for ( i=1; i<=n-1; i++) {
+8          for ( j=i+1; j<=n; j++) {
+9              for ( k=1; k<=j; k++) {
+10              c[i][j] = c[i][j]+ a[i][j]*b[i][j];
+11            }
+12        }
+13    }
+14 }
+</pre></code>
+<table id="tabla1">
+  <tr>
+    <td>Líneas 1 a 6</td>
+    <td>\( \quad : \quad \)</td>
+    <td>Tiempo constante: se juntan en \(k_1\)</td>
+  </tr>
+  <tr>
+    <td>Líneas 7, 8 y 9</td>
+    <td>\( \quad : \quad \)</td>
+    <td>Los <em>for</em> se convierten en sumatorias \(\sum\)</td>
+  </tr>
+  <tr>
+    <td>Línea 10</td>
+    <td>\( \quad : \quad \)</td>
+    <td>Tiempo constante \(k_2\)</td>
+  </tr>
+
+</table>
+
+<!-- <p> : </p>
+<p> : .</p>
+<p> : </p> -->
+
+<p>Uniendo la partes se tiene la función de tiempo <em>\(T(n)\)</em> (los números inferiores corresponden a las líneas en el código)</p>
+
+<p class="princ">$$T(n) = \underbrace{\vphantom{\sum_{i}^{n}} k_1}_{1..6} + \underbrace{\sum_{i=1}^{n-1}}_{7} \Biggl(\underbrace{\sum_{j=i+1}^{n}}_{8} \Biggl( \underbrace{\sum_{k=1}^{j}}_{9} \underbrace{\vphantom{\sum_{i}^{n}}k_2}_{10}\Biggr)\Biggr)$$</p>
+
+<p><em>Nota : </em>Los paréntesis no se necesitan, los agregué solo para que se vea mejor el alcance de cada sumatoria.</p>
+<p>Comienzo a trabajar desde la sumatoria más interna hacia afuera</p>
+<p>Suma de una constante :<span class="aux">\(\sum\limits_{k=1}^{j} k_2 = j * k_2 \)</span></p>
+<p class="princ">$$T(n) = k_1 + \sum_{i=1}^{n-1} \left(\sum_{j=i+1}^{n}\left( j * k_2\right)\right)$$</p>
+<p>Suma de constante por variable : <span class="aux">\(\sum\limits_{j=i+1}^{n}(j* k_2) = k_2 * \sum\limits_{j=i+1}^{n}j\)</span></p>
+<p class="princ">$$T(n) = k_1 + \sum_{i=1}^{n-1} \left(k_2 *\sum_{j=i+1}^{n}\left(  j\right)\right)$$</p>
+<p>Cambio los límites de la suma : <span class="aux">\(\sum\limits_{j=i+1}^{n}j = \sum\limits_{j=1}^{n}j - \sum\limits_{j=1}^{i}j\)</span></p>
+<p class="princ">$$T(n) = k_1 + \sum_{i=1}^{n-1} \left(k_2 *\left(\sum\limits_{j=1}^{n}j - \sum\limits_{j=1}^{i}j\right)\right)$$</p>
+<p>Suma de la variable indice : <span class="aux">\(\sum\limits_{j=1}^{n}j = \frac{n*(n+1)}{2} \qquad; \qquad \sum\limits_{j=1}^{i}j= \frac{i*(i+1)}{2}\)</span></p>
+<p class="princ">$$T(n) = k_1 + \sum_{i=1}^{n-1} \left(k_2 *\left(\frac{n*(n+1)}{2}-\frac{i*(i+1)}{2}\right)\right)$$</p>
+<p>Sacando la constante \(\frac{k_2}{2}\) fuera de la suma y aplicando propiedad distributiva:</p>
+<p class="princ">$$T(n) = k_1 + \frac{k_2}{2} * \sum_{i=1}^{n-1} \left( n^2 + n -i^2-i\right)$$</p>
+<p>Distribuyendo la sumatoria : </p>
+<p class="princ">$$T(n) = k_1 + \frac{k_2}{2} * \left(\sum_{i=1}^{n-1}  (n^2 + n) - \sum_{i=1}^{n-1} i^2 - \sum_{i=1}^{n-1} i\right)$$</p>
+<p>Aplicando :</p>
+<p><span class="aux">\(\sum\limits_{i=1}^{n} cte = n *cte \quad \rightarrow \quad \sum\limits_{i=1}^{n-1}(n^2 + n) = (n-1)*(n^2 + n)\)</span></p>
+<p><span class="aux">\(\sum\limits_{i=1}^{n} i = \frac{n*(n+1)}{2}  \quad \rightarrow \quad \sum\limits_{i=1}^{n-1} i = \frac{(n-1)*[(n-1)+1]}{2} = \frac{(n-1)*n}{2} \)</span></p>
+<p><span class="aux">\(\sum\limits_{i=1}^{n} i^2 = \frac{n*(n+1)*(2n+1)}{6}  \quad \rightarrow \quad \sum\limits_{i=1}^{n-1} i^2 = \frac{(n-1)*[(n-1)+1]*[2(n-1)+1]}{6} = \frac{(n-1)*n*(2n-1)}{6} \)</span></p>
+<p class="princ">$$T(n) = k_1 + \frac{k_2}{2} * \left( (n-1)*(n^2 + n) -\frac{(n-1)*n*(2n-1)}{6} - \frac{(n-1)*n}{2}\right)$$</p>
+<p>Haciendo denominador común y distribuyendo :</p>
+<p class="princ">
+$$T(n) = k_1 + \frac{k_2}{2} * \left( \frac {6( n^3 + n^2 - n^2 - n) - ( 2n^3 - n^2 - 2n^2 + n) - 3(n^2 - n)}{6} \right)  $$</p>
+<p>Operando algebraicamente : </p>
+<p class="resultado">$$T(n) = \frac{k_2}{3} * n^3  - \frac{k_2}{3} *  n + k_1 $$</p>
+<br><br>
+<h4>Recordando la definición de Big-Oh :</h4>
+<div class="princ">
+  <p>Decimos que </p>
+  <p>\( T(n) = O(f(n)) \)</p>
+  <p>si existen constantes  \( c \) y  \(n_0 \) tales que :</p>
+  <p>\( T(n) \ge c * f(n) \qquad \)para todo \(  c \gt 0 \wedge  n \ge n_0  \)</p>
+</div>
+<p>Aplicando esto al \(T(n)\) obtenido</p>
+<p>Analizando cada término por separado</p>
+<div class="aux tabla">
+  <table>
+    <tr>
+      <td>$$ \frac{k_2}{3} * n^3 \le c_2 * n^3 $$</td>
+      <td>$$ \forall c_2 \ge \frac{k_2}{3} \wedge n_0 \ge 1 $$</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>$$ - \frac{k_2}{3} * n \le c_2 * n^3 $$</td>
+      <td>$$ \forall c_2 \ge 0 \wedge n_0 \ge 1 $$</td>
+      <td>Razón por la que los términos negativos se pueden eliminar de T(n)</td>
+    </tr>
+    <tr>
+      <td>$$ k_1 \le c_1 * n^3 $$</td>
+      <td>$$ \forall c_1 \ge 0 \wedge n_0 \ge 1 $$</td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+<p>Sumando miembro a miembro (descartando el término negativo)</p>
+<p class="aux">\( \frac{k_2}{3} * n^3 + k_1 \le c_2 * n^3 + c_1 * n^3 \)</p>
+<p>Sacando factor común \(n^3\)</p>
+<p class="aux">\( \frac{k_2}{3} * n^3 + k_1 \le ( c_2  + c_1 ) * n^3 \)</p>
+<p>Tomando <span class="aux2">\(n_0 = 1 \) </span> (se toma el mayor, y este caso son todos iguales)  y <span class="aux2">\( c = (c_1 + c_2) \) </span> con  <span class="aux2">\( c_1 = k_1 \)</span>  y <span class="aux2">\( c_2 = \frac{k_2}{3} \) </span> </p>
+<p>Llegamos finalmente a que :</p>
+<div class="resultado">
+  <p>$$ \frac{k_2}{3} * n^3 + k_1 \le c * n^3 $$</p>
+  <p>$$ T(n) \le c * n^3 \qquad con \quad c = k_1 + \frac{k_2}{3} \quad \wedge \quad n_0 = 1 $$</p>
+  <p>$$ T(n) \le O ( n^3 )$$</p>
+
+</div>
+
+
+
+</body>
+</html>
