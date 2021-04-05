@@ -373,7 +373,8 @@ vista1 = {
         let id = "valor" + i;
         let valor = document.getElementById(id);
         valor.innerHTML = `${dato.valor}&lt;span class="unidad"&gt;${dato.unidad}&lt;/span&gt;`;
-        if (dato.minimo && dato.valor < dato.minimo || dato.maximo && dato.valor > dato.maximo) {
+        if (dato.minimo && dato.valor < dato.minimo ||
+                dato.maximo && dato.valor > dato.maximo) {
             valor.parentElement.classList.add("alerta");
         } else {
             valor.parentElement.classList.remove("alerta");
@@ -387,19 +388,19 @@ vista1 = {
         }
     },
     controlarEventos: () => {
-        <span class="coment">// Se detectan los eventos de la vista</span>
-        <span class="coment">// Creo un solo "EventListener" sobre el elemento padre de los botones</span>
-        <span class="coment">// y cuando se produce el evento consulto que hijo lo recibió</span>
-        let contenido = document.querySelectorAll("#vista1 #contenido")[0];
-        contenido.addEventListener("click", (event) => {
-            if (event.target.parentElement.dataset.parametro) {
-                if (event.target.parentElement.classList.contains("controlSubir")){
-                    controladores1.cambiar(event.target.parentElement.dataset.parametro, "subir")
-                } else {
-                    controladores1.cambiar(event.target.parentElement.dataset.parametro, "bajar")
-                }
-            }
-        });
+      <span class="coment">// Se detectan los eventos de la vista</span>
+      <span class="coment">// Creo un solo "EventListener" sobre el elemento padre de los botones</span>
+      <span class="coment">// y cuando se produce el evento consulto que hijo lo recibió</span>
+      let contenido = document.querySelectorAll("#vista1 #contenido")[0];
+      contenido.addEventListener("click", (event) => {
+        if (event.target.parentElement.dataset.parametro) {
+          if (event.target.parentElement.classList.contains("controlSubir")){
+            controladores1.cambiar(event.target.parentElement.dataset.parametro, "subir")
+          } else {
+            controladores1.cambiar(event.target.parentElement.dataset.parametro, "bajar")
+          }
+        }
+      });
     }           
                 </pre></code></div>
                 <p><em>Controladores: </em>Los controladores se encuentran dentro del objeto <code>controladores1</code>
