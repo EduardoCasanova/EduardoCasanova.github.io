@@ -1,0 +1,20 @@
+#vista2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: lightgray ;
+}
+
+#vista2 #contenido{
+    /*! display: flex; */
+    /*! flex-direction: row; */
+    /*! align-items: center; */
+    /*! justify-content: space-around; */   
+    width: 90%;
+}
+
+#vista2 .oculto{
+    display: none;
+}

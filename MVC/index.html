@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVC</title>
+    <link rel="stylesheet" href="./recursos/normalize.min.css">
+    <link rel="stylesheet" href="./recursos/estilo.css">
+    <link rel="stylesheet" href="./recursos/vista1.css">
+    <link rel="stylesheet" href="./recursos/vista2.css">
+</head>
+
+<body>
+    <header>
+        <h1>INTRODUCCIÓN A <em>MVC</em></h1>
+        <h2><em>M</em>odelos, <em>V</em>istas y <em>C</em>ontroladores</h2>
+        <nav id="menu_principal">
+            <p data-item=0 class="boton boton_activo">Teoría</p>
+            <p data-item=1 class="boton">Ejemplo 1</p>
+            <p data-item=2 class="boton">Ejemplo 2</p>
+            <p data-item=3 class="boton">Análisis</p>
+            <p data-item=4 class="boton">Ejercicios</p>
+        </nav>
+    </header>
+    <div id="secciones">
+
+        <div class="oculto" id="mensaje">
+            <h1></h1>
+        </div>
+        <section class="" id="teoria">
+            <h2>Teoría</h2>
+            <article>
+                <h3>Historia</h3>
+                <p>La idea de aplicar patrones de diseño al desarrollo de software nace a principios de los 80. </p>
+                <p>La principal razón para esto es que al irse produciendo programas mas complejos conviene utilizar una
+                    metodología estandarizada en su diseño y codificación.</p>
+                <p>Su uso presenta varias <em>ventajas:</em></p>
+                <ul>
+                    <li>Si existe un patrón de diseño apto para nuestro problema se acortan los tiempos de desarrollo
+                    </li>
+                    <li>El programa creado resulta mas fácil de leer y por lo tanto de mantener.</li>
+                    <li>Si se trabaja en un equipo es mas fácil dividir las tareas a realizar</li>
+                    <li>Es mas simple modificar componentes sin afectar a todo el sistema</li>
+                </ul>
+                <p>Y algunas <em>desventajas:</em></p>
+                <ul>
+                    <li>En programas "chicos" posiblemente se tarde más en adaptarlos a un patrón que si no se utilizara
+                        uno.</li>
+                </ul>
+                <p>El <em>patrón de diseño <span class="data-over"
+                            data-over="Modelo Vista Controladores">MVC</span></em> nace durante el desarrollo del
+                    lenguaje Smalltalk durante las décadas del 70 y 80 (Smalltalk es un lenguaje de objetos puro, que
+                    sigue utilizándose). Esto hace de MVC un patrón antiguo, pero que con algunas modificaciones llega
+                    hasta nuestros dias con la ventaja de la experiencia obtenida con los años de uso.</p>
+            </article>
+            <article>
+                <h3>Aplicando MVC en la programación web</h3>
+                <p>Este patrón de diseño nos interesa debido a que lo utilizaremos durante el transcurso del curso, por
+                    ejemplo con los frameworks React y Express.</p>
+                <p>También se encuentra en otras librerías de uso común como ser AngularJS</p>
+
+                <h4>¿Qué funciones tiene cada componente?</h4>
+                <p><em>Vista:</em> Interactúa con el usuario, le muestra los datos y recibe los eventos generados por el
+                    mismo.</p>
+                <p>Tener en cuenta que la Vista no tiene por qué ser exclusivamente visual. Puede tener salidas
+                    auditivas y
+                    tactiles (terminal braille, guantes VR, etc), así como también las entradas (por ej "Alexa",
+                    lectores de
+                    huellas, etc.)</p>
+                <p><em>Modelo:</em> Se encarga del manejo de los datos, por ejemplo mediante el acceso a una base de
+                    datos,
+                    o a los valores obtenidos por interacción con los usuarios.</p>
+                <p>Esto puede incluir su lectura, escritura, modificación, adquisición, etc.</p>
+                <p> Algunas de sus funciones pueden estar por fuera de la aplicación web, por ejemplo un programa
+                    externo
+                    puede modificar la base de datos y nuestra aplicación solo leer sus valores.</p>
+                <p><em>Controladores:</em> Manejan el intercambio de información entre el modelo y la vista.</p>
+                <p>Pueden transformar la información recibida para adecuarla al receptor.</p>
+                <p>Por ejemplo la vista le envía al controlador el mensaje "el usuario pulsó un botón" y el controlador le
+                    pide al
+                    modelo que efectúe la acción correspondiente sobre los datos. O en el sentido contrario el modelo le
+                    informa de cambios en sus datos, y el controlador se lo comunica a la vista.</p>
+                <p>En un diseño MVC puro no hay comunicación directa entre el modelo y la vista, todo el intercambio
+                    entre
+                    ellos pasa por los controladores</p>
+
+                <h4>¿Donde encuentro cada componente?</h4>
+                <p><em>Vista:</em> Está principalmente en las partes HTML y CSS de la página, y en las funciones
+                    javascript
+                    encargadas de crear y/o modificar las anteriores cuando sea necesario (por ejemplo ante cambios en
+                    el modelo o en respuesta a una acción del usuario)</p>
+                <p><em>Modelo:</em> Abarca a los elementos que contienen los datos (por ejemplo una base de datos), y el
+                    código javascript encargado de su consulta y manipulación (normalmente lo encontraríamos casi
+                    totalmente
+                    en el servidor, aunque puede haber parte en el cliente)</p>
+                <p><em>Controladores:</em>Se encuentra en las funciones javascript encargadas de responder a los eventos
+                    generados tanto en la vista como en el modelo (los encontrariamos tanto en el cliente como en el
+                    servidor).
+                </p>
+            </article>
+            <article>
+                <h4>Bibliografía</h4>
+                <p>Para los que le interese profundizar sobre el tema de los patrones de diseño en general y en especial
+                    el patrón MVC, se puede encontrar material de utilidad en:</p>
+                <ul>
+                    <li>Wikipedia: <a href="https://wikipedia.org/" target="_blank">https://wikipedia.org/</a></li>
+                    <li>en OpenLibra: <a href="https://www.openLibra.com" target="_blank">www.openLibra.com</a> se
+                        encuentran varios libros sobre el tema, con licencias libres y descarga legal.</li>
+                    <li>el libro Patrones de Diseño de Erich Gamma, es un clásico sobre el tema, y aún útil aunque tenga
+                        sus años (es de 1995).</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="oculto" id="ejemplo1">
+            <h2>Casos de ejemplo</h2>
+            <h3>1- Casa de Comidas</h3>
+            <p>Debemos crear un sitio para una casa de comidas con entrega a domicilio. Esta ya está funcionando sobre
+                la
+                base de pedidos telefónicos.</p>
+            <p><em>Antes de ponernos a programar</em> debemos analizar lo que tenemos que hacer, identificando cada
+                parte y en este caso viendo como utilizamos el modelo MVC.</p>
+            <p>En la implementación deseada deben existir distintas categorias de usuarios y de productos.</p>
+            <div id="ej1_usuarios">
+                <h4>Categorias de usuarios</h4>
+                <dl>
+                    <dt>Visitante</dt>
+                    <dd>solo puede hacer una navegación básica, no puede realizar pedidos, existen areas donde no puede
+                        ingresar</dd>
+                    <dt>Usuario registrado</dt>
+                    <dd>Puede realizar pedidos, puede acceder a todo el sitio.</dd>
+                    <dt>Administrador</dt>
+                    <dd>Puede acceder a todo el sitio, puede realizar cambios en los datos</dd>
+                </dl>
+            </div>
+            <div id="ej1_productos">
+                <h4>Productos</h4>
+                <dl>
+                    <dt>Nombre</dt>
+                    <dd>el nombre del producto</dd>
+                    <dt>Código</dt>
+                    <dd>para uso interno, no se muestra al usuario</dd>
+                    <dt>Precio</dt>
+                    <dd>precio por porción</dd>
+                    <dt>Stock</dt>
+                    <dd>de cuantas porciones disponemos, se debe actualizar con cada pedido</dd>
+                    <dt>Categorías</dt>
+                    <dd>por ejemplo: entradas, platos principales, postres, bebidas, platos especiales, ofertas, etc.
+                    </dd>
+                    <dt>Descripción</dt>
+                    <dd>una breve descripción del producto</dd>
+                    <dt>Imagen</dt>
+                    <dd>una o más fotos del producto</dd>
+                </dl>
+            </div>
+            <h4>Implementación del patrón MVC</h4>
+            <p>¿Qué contiene cada componente?</p>
+            <dl>
+                <dt>Modelos:</dt>
+                <dd>Necesitaremos dos: uno para representar a los usuarios, y otro a los productos. Dependiendo de la
+                    cantidad de datos que se estima manejar podrían utilizarse bases de datos o archivos json.</dd>
+                <dt>Vistas:</dt>
+                <dd>Por lo menos cuatro, una para cada categoría de usuario y otra para el ingreso (login)</dd>
+                <dt>Controladores:</dt>
+                <dd>El código de enlace entre las dos partes anteriores, debe responder a las acciones de los usuarios y
+                    a
+                    los cambios de los modelos (por ej. cuando cambia el stock se actualizaran las vistas
+                    correspondientes
+                    para todos los usuarios conectados)</dd>
+            </dl>
+        </section>
+        <section class="oculto" id="ejemplo2">
+            <nav id="menu_vistas">
+                <p class="boton boton_activo" data-item=0>Descripción</p>
+                <p class="boton" data-item=1>Vista 1</p>
+                <p class="boton" data-item=2>Vista 2</p>
+            </nav>
+            <div class="oculto" id="vista1">
+                <header>
+                    <h1 id>Control de Planta</h1>
+                    <h2>Vista 1</h2>
+                </header>
+                <div id="contenido"></div>
+            </div>
+            <div class="oculto" id="vista2">
+                <header>
+                <h1 id>Control de Planta</h1>
+                <h2>Vista 2</h2>
+                </header>
+                <div id="contenido"></div>
+            </div>
+            <div class="" id="vistasDescripcion">
+                <h2>Sobre este ejemplo</h2>
+                <p>En este caso se toma como modelo una simulación del manejo de parámetros de una linea de producción
+                    industrial obtenidos mediante sensores y controlados mediante los actuadores correspondientes.</p>
+                <p>Los datos del modelo se acualizan periódicamente en forma aleatoria, y también cuando el usuario
+                    actúa sobre la vista.</p>
+                <p>La simulación es solo aproximada, en el caso real el cambio de valores,si bien es aleatorio puede
+                    presentar tendencias a repetir el sentido del cambio (es más probable que después de un aumento siga
+                    otro aumento que una disminución, y viceversa), y las respuestas a los controles no son instantáneas
+                </p>
+                <p>La Vista 1 es principalmente numérica, mientras que la Vista 2 contiene algunos elementos gráficos.</p>
+            </div>
+        </section>
+        <section class="oculto" id="analisis">
+            <h2>Análisis del ejemplo 2</h2>
+            <article>
+                <h4>Simplificaciones</h4>
+                <p>Con el fin de facilitar el análisis, en el ejemplo se realizan varias simplificaciones respecto a lo
+                    que
+                    sería una página a publicar.</p>
+                <ul>
+                    <li>Todos los componentes se encuentran a nivel cliente. No se está utilizando un servidor, el que
+                        se
+                        verá
+                        mas adelante en el curso. Esto implica que:</li>
+                    <ul>
+                        <li>Los datos están incluidos dentro del código javascript cliente. En la vida real lo más común
+                            es
+                            que
+                            se encuentren del lado del servidor, en una base de datos, o en archivos con formato <span
+                                class="data-over" data-over="JavaScript Object Notation">json</span>, <span
+                                class="data-over" data-over="eXtensible Markup Language">XML</span> o similares.</li>
+                        <li>Los cambios que se realizen sobre los datos se pierden al cerrar la página (existen
+                            mecanismos
+                            para
+                            que queden guardados en el navegador del cliente, pero no se utilizan aquí).</li>
+                        <li>No se requiere implementar una capa de seguridad (lo que haga el usuario se queda en su
+                            navegador).</li>
+                    </ul>
+                    <li>No se utilizan hojas de estilo (CSS) ni scripts externos al sitio (aparte de normalize.css, que
+                        ayuda a
+                        eliminar diferencias de visualización entre navegadores)</li>
+                    <li>Si miran el código de la página verán que no es exactamente igual al analizado aquí, donde solo
+                        vemos los puntos principales relacionados al tema y pasamos por alto algunos otros que se verán
+                        mas
+                        adelante en el curso.</li>
+
+                </ul>
+            </article>
+            <article>
+                <h4>Código</h4>
+                <p>El archivo <code>./recursos/script.js</code> contiene el código de la página que no está directamente
+                    relacionado al MVC</p>
+                <p>Cada componente se encuentra dentro de un objeto separado, para mostrar como interactuan entre sí.
+                </p>
+                <p>Analizamos la combinación de los objetos datos, controladores1 y vista1</p>
+                <p>El objeto "vista" nunca llama al objeto "modelo" y viceversa. Todas las comunicaciones pasan por el
+                    objeto "controladores"</p>
+                <p>Verán que utilizo como métodos (funciones dentro de los objetos) tanto funciones estandar
+                    (<code>function&nbsp;()&nbsp;{&nbsp;}</code>) como funciones flecha (<code>()&nbsp;=>&nbsp;{&nbsp;}</code>). Esto es debido a la
+                    diferente forma en que tratan a la variable <code>this</code>.</p>
+                <p><em>Modelo: </em> los datos del modelo se encuentran dentro de un objeto javascript ubicado en
+                    <code>./recursos/modelo1.js</code>, el cual contiene
+                    también los métodos(funciones) mediante los cuales se comunica con el resto de la aplicación.
+                </p>
+                <div class="codigo"><pre><code>
+datos = {                       <span class="coment">// el el objeto que contiene el modelo</span>
+    "data": [                   <span class="coment">// arreglo de los objetos de datos</span>
+        {                       <span class="coment">// un objeto que contiene la información de un dato</span> 
+            "nombre": "presión 1",  
+            "valor": "7",
+            "unidad": "atm",
+            "minimo": "3",
+            "maximo": "8",
+            "control_subir": "true",
+            "control_bajar": "true",
+            "descripcion": "",
+        },
+        ...
+    ],
+    <span class="coment">// Métodos</span>
+    verificar: (n, valor) => {          
+        <span class="coment">// verifica la validez de los datos antes de cambiarlos</span>
+        let dato = this.data[n];
+        if (valor < dato.inicio) { valor = dato.inicio } else {
+            if (valor > dato.fin) { valor = dato.fin }
+        }
+        return valor;
+    }
+    getCantidad: function () {          
+        <span class="coment">// retorna la cantidad de datos en el arreglo data[]</span>
+        return this.data.length;
+    },    
+    getItem: function (n) {             
+        <span class="coment">// retorna el dato en la posición n del arreglo</span>
+        return this.data[n];
+    },
+    setItem: function (n, valor) {
+        <span class="coment">// cambia el dato recibido (si es válido)</span>  
+        <span class="coment">// y avisa a los controladores que cambió un valor</span>
+        valor = this.verificar(n, valor);
+        this.data[n].valor = valor;
+        controladores.cambio(n);
+    },
+    subir: function(n) {                
+        <span class="coment">// incrementa en 1 el valor de un dato</span>
+        this.setItem(n, parseInt(this.getItem(n).valor) + 1);
+    },
+    bajar: function(n) {                
+        <span class="coment">// decrementa en 1 el valor de un dato</span>
+        this.setItem(n, parseInt(this.getItem(n).valor) - 1);
+    },
+    cambiarValores: () => {             
+        <span class="coment">// simula la lectura de sensores relacionados con los datos </span>
+        <span class="coment">// se basa en el uso de las funciones Math.floor() y Math.random().</span>
+        <span class="coment">// se actualiza periódicamente mediante un "setInterval" en scripts.js </span>
+        <span class="coment">// que se activa al ingresar por primera vez en la vista</span>
+        ...
+    }
+}         
+                </code></pre></div>
+
+                <p><em>Vista: </em> La vista se encuentra distribuida entre los archivos <code>./index.html</code> (su
+                    estructura básica), <code>./recursos/vista.css</code> (sus estilos) y
+                    <code>./recursos/vista1.js</code> (el javascript de generación del resto de la estructura de la
+                    vista, la presentación de datos, y la respuesta a las acciones del usuario y a los mensajes de los
+                    controladores).
+                </p>
+                <div class="codigo"><code><pre>
+vista1 = {                                      
+    <span class="coment">// el objeto  que contiene la vista (su parte javascript)</span>                    
+    generada: false,
+    <span class="coment">// variable boolean que indica si ya fue generado el HTML de la vista</span>
+    mostrar: function () {                      
+        <span class="coment">// método llamado desde script.js cuando se muestra esta vista</span>                            
+        <span class="coment">// si es la primera vez que se ingresa a la vista la genera,</span>
+        <span class="coment">// sino actualiza todos los datos</span>
+        if (!this.generada) {                   
+            this.generar();
+            this.generada = true;
+        } else {
+            this.actualizarTodo();              
+        } 
+        this.controlarEventos();               
+        <span class="coment">// llama al método que activa los eventos de la vista</span>
+    },
+    generar: () => {
+        <span class="coment">// genera la estructura HTML y muestra los primeros datos</span>
+        <span class="coment">// es una función "larga" ya que se genera un arbol DOM relativamente grande.</span>
+        let contenido = document.querySelectorAll("#vista1 #contenido")[0];
+        <span class="coment">// elemento DOM contenedorde los datos de la vista</span>
+        if (contenido.innerHTML == "") {
+            <span class="coment">// si no existe contenido lo crea</span>
+            <span class="coment">// si ya existe no hace nada</span>
+            let fragment = document.createDocumentFragment();
+            <span class="coment">//crea un fragmento de HTML que luego se insertará en el contenedor</span>
+            <span class="coment">// el resto del método se basa en el uso de las funciones:</span>
+            <span class="coment">//      document.createElement("elem");</span>
+            <span class="coment">//          donde "elem" puede ser casi cualquier elemento del DOM</span>
+            <span class="coment">//          en este caso principalmente "div" y "p"  </span>
+            <span class="coment">//      elem.classList.add("clase");</span>
+            <span class="coment">//          agrega una clase al elemento "elem"</span>
+            <span class="coment">//      elem.textContent = texto;</span>
+            <span class="coment">//          agrega "texto" como contenido de elem</span>
+            valor.innerHTML = `${dato.valor}&lt;span class="unidad"&gt;${dato.unidad}&lt;/span&gt;`;
+            <span class="coment">// en esta linea tenemos:</span>
+            <span class="coment">//      innerHTML: indica que el valor es HTML que irá dentro del elemento "valor" </span>
+            <span class="coment">//      las comillas invertidas ` ` señalan el uso de un "template literal" </span>
+            <span class="coment">//      donde ${variable} se reemplaza por el valor de la variable</span>
+            div.appendChild(valor);
+            <span class="coment">// agrega el elemento "valor" como último hijo del elemento "div"</span>
+            <span class="coment">// Este esquema se repite hasta completar la vista  </span>
+    }
+            
+    actualizar: (i, dato) => {
+        <span class="coment">// actualiza la vista del elemento "elem" </span>
+        <span class="coment">// cada vez que los controladores informan de un cambio en los datos del modelo.</span>
+        <span class="coment">// controla que el valor esté en rango aceptable (entre el mínimo y el máximo)</span>
+
+        let id = "valor" + i;
+        let valor = document.getElementById(id);
+        valor.innerHTML = `${dato.valor}&lt;span class="unidad"&gt;${dato.unidad}&lt;/span&gt;`;
+        if (dato.minimo && dato.valor < dato.minimo || dato.maximo && dato.valor > dato.maximo) {
+            valor.parentElement.classList.add("alerta");
+        } else {
+            valor.parentElement.classList.remove("alerta");
+        }
+    },
+    actualizarTodo: function () {
+        <span class="coment">// recorre todos los datos (a través de los controladores correspondientes)</span>
+        <span class="coment">// actualizando la vista</span>
+        for (let i = 0; i < controladores1.cantidadDatos(); i++) {
+            this.actualizar(i, controladores1.leerDatos(i));
+        }
+    },
+    controlarEventos: () => {
+        <span class="coment">// Se detectan los eventos de la vista</span>
+        <span class="coment">// Creo un solo "EventListener" sobre el elemento padre de los botones</span>
+        <span class="coment">// y cuando se produce el evento consulto que hijo lo recibió</span>
+        let contenido = document.querySelectorAll("#vista1 #contenido")[0];
+        contenido.addEventListener("click", (event) => {
+            if (event.target.parentElement.dataset.parametro) {
+                if (event.target.parentElement.classList.contains("controlSubir")){
+                    controladores1.cambiar(event.target.parentElement.dataset.parametro, "subir")
+                } else {
+                    controladores1.cambiar(event.target.parentElement.dataset.parametro, "bajar")
+                }
+            }
+        });
+    }           
+                </pre></code></div>
+                <p><em>Controladores: </em>Los controladores se encuentran dentro del objeto <code>controladores1</code>
+                    en el archivo <code>./recursos/controladores1.js</code>
+                <p>El código es más sencillo que los anteriores, ya que en este caso los controladores solo actuan como puente entre el modelo y la vista.</p>
+                <div class="codigo"><code><pre>
+let controladores1 = {                  
+    <span class="coment">// objeto que contiene a los controladores</span>
+    cantidadDatos: () => {              
+        <span class="coment">   // pregunta al modelo la cantidad de datos</span>
+        return datos.getCantidad();
+    },
+    leerDatos: (i) => {                 
+        <span class="coment">    // consulta al modelo por un dato en particular</span>
+        return datos.getItem(i)
+    },
+    cambio: (i) => {                    
+        <span class="coment">    // avisa a la vista que hubo cambios en los datos del modelo</span>
+        vista1.actualizar(i, datos.getItem(i));
+    },
+    cambiar: (i, sentido) => {          
+        <span class="coment">   // indica al modelo que el usuario actuó sobre la vista</span>
+        <span class="coment">   // solicitando subir o bajar un valor</span>
+        if (sentido == "subir") {
+            datos.subir(i);
+        } else {
+            datos.bajar(i);
+        }
+    }
+};
+                    
+                </pre></code></div>
+            </article>
+        </section>
+        <section class="oculto" id="ejercicios">
+            <h2>Ejercicios</h2>
+            <ol>
+                <li>Gracias a lo bien que realizamos el sitio para la casa de comidas del ejemplo 1 &#128079; nos
+                    contratan para realizar uno similar para un gran supermercado.
+                    <ul>
+                        <li>¿Qué similitudes y diferencias encuentran entre los dos casos?</li>
+                        <li>¿Podemos reutilizar parte del código de la casa de comidas?</li>
+                        <li>¿Cuáles son los principales cambios que tendriamos que realizar?</li>
+                    </ul>
+                </li>
+                <li>
+                    <p>(tarea para el hogar &#128542;) Imaginen que deben crear un sitio sobre el tema que ustedes
+                        deseen.
+                    </p>
+                    <p>Deben presentar:</p>
+                    <ul>
+                        <li>Introducción al tema sobre el que quieran trabajar</li>
+                        <li>¿Cómo aplicarían la metodología MVC en este sitio?</li>
+                        <li>¿Qué contenidos tendría cada una de las partes (Modelo, Vista, Controlador)?</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+    </div>
+    <footer>
+        <div>
+            <p><em>Eduardo Casanova</em></p>
+            <p>abril de 2021</p>
+            <p>para <em>www.digitalhouse.com</em></p>
+        </div>
+    </footer>
+    <script src="./recursos/datos1.js"></script>
+    <script src="./recursos/vista1.js"></script>
+    <script src="./recursos/controladores1.js"></script>
+    <script src="./recursos/vista2.js"></script>
+    <script src="./recursos/controladores2.js"></script>
+    <script src="./recursos/script.js"></script>
+</body>
+
+</html>
