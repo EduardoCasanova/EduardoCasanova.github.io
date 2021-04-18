@@ -1,0 +1,26 @@
+.ejemplo,
+.solucion {
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.ejemplo {
+    background-color: #fbeced;
+    margin: 2rem 0;
+}
+
+.solucion {
+    background-color: #f7fbf0;
+}
+
+.margen1 {
+    margin-left: 2rem;
+}
+
+.margen2 {
+    margin-left: 4rem;
+}
+
+.margen3 {
+    margin-left: 6rem;
+}

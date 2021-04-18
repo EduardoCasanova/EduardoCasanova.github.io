@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errores</title>
+    <link rel="stylesheet" href="../../../recursos/normalize.min.css">
+    <link rel="stylesheet" href="../../../recursos/estilo.css">
+    <link rel="stylesheet" href="./recursos/estilo.css">
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- 
+    <script async src="../../../../../../../../usr/share/javascript/mathjax/MathJax.js?config=TeX-MML-AM_CHTML"></script> 
+-->
+
+</head>
+
+<body>
+    <header>
+        <h1>Teoría de errores</h1>
+    </header>
+    <section>
+        <h3>Ejemplos de cálculo</h3>
+        <div class="ejemplo">
+            <div class="problema">
+                <p>Dado el número exacto : \(\alpha = 3,141592654\)</p>
+                <p>Determinar el error absoluto, relativo y porcentual para el mismo al redondearlo por defecto, exceso
+                    y al valor más próximo, tomando el valor aproximado con tres cifras significativas.</p>
+                <p>Calcular las cotas superiores de los errores absoluto y relativo, e indicar en que intervalo se puede
+                    asegurar que se encuentra el valor de \(\alpha\).</p>
+            </div>
+            <div class="solucion">
+                <p>Solo se debe tomar el valor dado como exacto si se lo indica expresamente.</p>
+                <p class="margen1"><strong>Redondeo por defecto:</strong> \(a = 3,14\) (directamente se "corta" el
+                    número)</p>
+                <p class="margen2"><strong>Error absoluto</strong></p>
+                <p class="margen3"> \(\Delta(a)= \alpha - a = 3,141592654 - 3,14 = 0.001592654 \approx 0.002\)</p>
+                <p class="margen3">redondeo el error a una cifra significativa (el primer número distinto de
+                    cero : 0,002), pero su cantidad de decimales no puede ser mayor que la del número aproximado,
+                    entonces quedaría \(\Delta(a)= 0,01\)</p>
+                <p class="margen3">Otra opción es agregar un 0 como cifra significativa del número aproximado, quedando
+                    \(a=3,140\) y \(\Delta(a)= 0,002\)</p>
+                <p class="margen3">Nota: Consulta con tus profesores el criterio seguido por su cátedra.</p>
+                <p class="margen2"><strong>Error relativo</strong></p>
+                <p class="margen3">\(E(a) = \dfrac{\Delta(a)}{\alpha} = \dfrac{0,002}{3,141592654} \approx 0,0006\)</p>
+                <p class="margen2"><strong>Error porcentual</strong></p>
+                <p class="margen3">\(\gamma(a) = E(a) * 100 = 0.0006 * 100 = 0,06 \%\)</p>
+                <p class="margen2"><strong>Cota superior del error absoluto</strong></p>
+                <p class="margen3">Es un número real positivo\( \Delta^*(a)\) que verifique \(|\alpha -a| = |\Delta(a)| < \Delta^*(a)\)</p>
+                <p class="margen3">Puede tomar infinitos valores. Se elige uno cercano al error absoluto</p>
+                <p class="margen3">\(\Delta^*(a) = 0.002\)</p>
+                <p class="margen2"><strong>Cota superior del error relativo</strong></p>
+                <p class="margen3">Es un número real positivo \(E^*(a)\) que verifique \(|E(a)| < E^*(a) \) por lo tanto se puede tomar \(E^*(a)=\dfrac{\Delta^*(a)}{|a|}\)</p>
+                <p class="margen3">\(E^*(a) = \dfrac{0,002}{3,14} \approx 0,0006\)</p>
+                <p class="margen2"><strong>Cota superior del error porcentual</strong></p>
+                <p class="margen3">\(\gamma^*(a) = E^*(a) * 100 = 0,0006 * 100 = 0,06 \% \)</p>
+                <p class="margen2"><strong>Intervalo donde se puede encontrar \(\alpha\)</strong></p>
+                <p class="margen3">\( a - \Delta^*(a) < \alpha < a + \Delta^*(a) \longleftrightarrow \alpha = a \pm \Delta^*(a)\)</p>
+                <p class="margen3">\(\alpha = 3,140 \pm 0,002 \longleftrightarrow 3,138 < \alpha < 3,142\)</p>
+                <p class="margen1"><strong>Redondeo por exceso:</strong> \(a = 3,15\) (se corta el número y se le suma 1 al último dígito)</p>
+                <p class="margen3">Continua en forma similar al anterior.</p>
+                <p class="margen1"><strong>Redondeo al valor más próximo</strong> \(a=3.14\)</p>
+                <p class="margen3">En este caso es idéntico al primero (en otras ocasiones al segundo).</p>
+            </div>
+        </div>
+        <div class="ejemplo">
+            <div class="problema">
+                <p><strong>Propagación de errores - caso básico</strong></p>
+                <p>Si \(x_1 = 5,23 \pm 0,03\) y \(x_2=3,41 \pm 0,05\) calcular la cota del error para \(x_1 + x_2\)</p>
+            </div>
+            <div class="solucion">
+                <p>En este caso se puede usar directamente la fórmula del error absoluto de la suma. Lo mismo sucede si se tratara de otras operaciones básicas.</p>
+                <p>\(\Delta^*(x_1 + x_2) = \Delta^*(x_1) + \Delta^*(x_2) = 0,03 + 0.05 = 0,08\)</p>
+                <p>\(x= 5,23 + 3,41 = 8,64\)</p>
+                <p>\(x_1 + x_2 = 8,64 \pm 0,08\)</p>
+            </div>
+        </div>
+        <div class="ejemplo">
+            <div class="problema">
+                <p><strong>Propagación de errores - cálculo usando la definicion</strong></p>
+                <p>En la expresión algebraica siguiente todas las cantidades han sido redondeadas al valor más próximo. Calcular la cota de error del resultado </p>
+                <p>\[ f = \frac{3,7}{31} - 5,62 * 1,287 \]</p>
+            </div>
+            <div class="solucion">
+                <p>En este caso uso la fórmula general para el cálculo de errores en funciones</p>
+                <p>Para una función \(u = f(x_1, x_2,\ldots,x_n)\), teniendo cada \(x_i\) un error asociado \(\Delta^*(x_i)\) </p>
+                <p>La cota superior del error absoluto es:</p>
+                <p>\[\Delta^*(u) = \sum_{i=1}^n \left |\frac{\delta(f)}{\delta(x_i)} \right |* \Delta^*(x_i)  \]</p>
+                <br>
+                <p>Si se redondea al valor más próximo, el error se acota a 0,5 siguiendo a la última cifra significativa</p>
+                <p>En nuestro caso queda : </p>
+                <p>\[ \begin{array}{lcl} 
+                    f=\dfrac{a}{b}-c*d  & \mbox{con} & a = 3,7 \pm 0,05 \\
+                    & & b = 31 \pm 0,5 \\
+                    & & c = 5,62 \pm 0,005 \\
+                    & & d = 1,287 \pm 0,0005 \\    
+                    \end{array}\]</p>
+                <p>\[\Delta^*(f) = \left |\frac{\delta(f)}{\delta(a)} \right |* \Delta^*(a)  + \left |\frac{\delta(f)}{\delta(b)} \right |* \Delta^*(b)  + \left |\frac{\delta(f)}{\delta(c)} \right |* \Delta^*(c) + \left |\frac{\delta(f)}{\delta(d)} \right |* \Delta^*(d)\]</p>
+                <p>\[\Delta^*(f) = \left |\frac{1}{b} \right |* \Delta^*(a)  + \left |-\frac{a}{b^2} \right |* \Delta^*(b)  + \left |-d \right |* \Delta^*(c) + \left |-c \right |* \Delta^*(d)\]</p>
+                <p>\[\Delta^*(f) = \left |\frac{1}{31} \right |* 0,05  + \left |-\frac{3,7}{31^2} \right |* 0,5  + \left |-1,287 \right |* 0,005 + \left |-5,62 \right |* 0,0005\]</p>
+                <p>\[\Delta^*(f) = 0,013 \approx 0,01 \]</p>
+            </div>
+        </div>
+        <div class="ejemplo">
+            <div class="problema">
+                <p><strong>Método Inverso</strong></p>
+                <p>¿Con que precisión deben medirse x e y para que el cálculo de z tenga un error inferior a 0,1?</p>
+                <p>\[ z = x * \cos(y) + y^2 * \tan(x) \qquad\mbox{con} \qquad x \approx 3,5 \qquad \mbox{e} \qquad y \approx 2,1\]</p>
+                <p>Usando las hipótesis :</p>
+                <ul>
+                    <li>Errores absolutos iguales</li>
+                    <li>Errores relativos iguales</li>
+                    <li>Efectos iguales</li>
+                </ul>
+            </div>
+            <div class="solucion">
+                <p class="margen2"><strong>IMPORTANTE : </strong>Recordar que los ángulos van en radianes, convertirlos si están en grados.</p>
+                <p class="margen2">Calculo el valor de z sin tener en cuenta por ahora los errores.</p>
+                <p class="margen2">\[ z = 3,5 * \cos(2,1) + 2,1^2 * \tan(3,5) \approx -0,115\]</p>
+                <p><strong>Errores absolutos iguales</strong></p>
+                <p class="margen2">Se usa la fórmula:</p>
+                <p class="margen2">\[ \Delta^*(x_1) = \ldots = \Delta^*(x_n) = \dfrac{\Delta^*(f)}{\sum\limits_{j=1}^n \left | \dfrac{\delta(f)}{\delta(x_j)} \right |} \]</p>
+                <p class="margen2">Que para nuestra ecuación queda :</p>
+                <p class="margen2">\[  \Delta^*(x) = \Delta^*(y) = \dfrac{\Delta^*(f)}{\left | \dfrac{\delta(f)}{\delta(x)} \right | + \left | \dfrac{\delta(f)}{\delta(y)} \right |} \]</p>
+                <p class="margen2">Calculo las derivadas parciales </p>
+                <p class="margen2">\[\dfrac{\delta(f)}{\delta(x)} = \cos(y) + \dfrac{y^2}{\cos^2(x)}\] \[\dfrac{\delta(f)}{\delta(y)} = -x* \sin(y)+2*y*\tan(x) \]</p>
+                <p class="margen2">Reemplazo sobre la fórmula y aplico los valores correspondientes</p>
+                <p class="margen2">\[ \Delta^*(x) = \Delta^*(y) = \dfrac{\Delta^*(f)}{\bigg | \cos(y) + \dfrac{y^2}{\cos^2(x)} \bigg | +  \bigg | -x * \sin(y)+2*y*\tan(x) \bigg |}  \]</p>
+                <p class="margen2">\[ \Delta^*(x) = \Delta^*(y) = \dfrac{0.1}{\bigg | \cos(2.1) + \dfrac{2.1^2}{\cos^2(3.5)} \bigg | +  \bigg | -3.5 * \sin(2.1)+2*2.1*\tan(3.5) \bigg |}  \]</p>
+                <p class="margen2">\[ \Delta^*(x) = \Delta^*(y) = 0,0167 \approx 0,017 \approx 0,02 \]</p>
+                <p>En este caso (17 < 25) el redondeo puede hacerse con 1 o 2 cifras significativas (ver criterio de tus profesores)</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
