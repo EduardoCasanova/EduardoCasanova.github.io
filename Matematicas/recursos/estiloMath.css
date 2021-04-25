@@ -1,0 +1,142 @@
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+/* PAGINAS MATEMATICAS                       */
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+p{
+    line-height: 2rem;
+}
+.ejemplo,
+.solucion {
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.ejemplo {
+    background-color: #fff1f1;
+    margin: 2rem 0;
+}
+
+.solucion {
+    background-color: #fdfffb;
+}
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+/* CONTENEDORES GRAFICOS Y PROCEDIMIENTOS    */
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+
+.graf_proc {
+    display: flex;
+    flex-direction: row;
+}
+
+#opciones {
+    display: flex;
+    margin-bottom: 1rem;
+    width: max-content;
+}
+
+fieldset {
+    width: max-content;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    width: 10rem;
+    min-width: max-content;
+    background-color: aliceblue;
+    padding: 5px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+canvas {
+    border: 2px solid darkgray;
+    border-radius: 10px;
+}
+
+/* #procedimiento{ */
+/*! background-color: #bdd5bd; */
+/*! padding: 0 1rem; */
+/* } */
+@media (min-width: 801px) {
+    #opciones {
+        flex-direction: row;
+    }
+
+    .graf_proc {
+        flex-direction: row;
+    }
+
+    /* #canvas1{
+        /*! width: 40%; */
+    /* } */
+    #procedimiento {
+        width: 60%;
+    }
+}
+
+@media (max-width: 800px) {
+    #opciones {
+        flex-direction: column;
+    }
+
+    .graf_proc {
+        flex-direction: column;
+    }
+
+    #canvas1,
+    #procedimiento {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.sinMargen {
+    margin: 0;
+    padding: 0.5rem 0.5rem;
+}
+table{
+ border-collapse: collapse;  
+ margin-top: 2rem;
+}
+th,
+td {
+    padding: 10px;
+    border: 1px solid #333;
+}
+th:nth-child(1),td:nth-child(1)
+{
+    width: 3rem;
+}
+
+th:nth-child(2), td:nth-child(2)
+{
+    width: 5rem;
+}
+th:nth-child(3), td:nth-child(2)
+{
+    width: 5rem;
+}
+th:nth-child(4), td:nth-child(2)
+{
+    width: 5rem;
+}
+th:nth-child(5), td:nth-child(2)
+{
+    width: 5rem;
+}
+input[type=number]{
+    width: 6rem;
+}
+/*
+input:invalid{
+    ! background-color: orange; 
+}
+*/
+.resaltado{
+    background-color: darkblue;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}

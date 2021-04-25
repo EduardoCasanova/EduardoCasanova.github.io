@@ -104,3 +104,37 @@ a:active{
     cursor: not-allowed;
     opacity: 0.3;
 }
+
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+/* TABULACIONES  */
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+.margen1 {
+    margin-left: 2rem;
+}
+.margen2 {
+    margin-left: 4rem;
+}
+.margen3 {
+    margin-left: 6rem;
+}
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+/* VARIOS  */
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+.oculto{
+    display: none;
+}
+#contacto{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: baseline;
+        
+}
+.seleccionable{
+    user-select: text;
+    background-color: aliceblue;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid darkgray
+}
