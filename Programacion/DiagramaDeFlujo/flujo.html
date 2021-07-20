@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagrama de Flujo</title>
+  <link rel="stylesheet" href="./recursos/normalize.min.css">
+  <link rel="stylesheet" href="./recursos/estilo.css">
+
+</head>
+
+<body>
+  <header>
+    <h1>Diagrama de Flujo</h1>
+  </header>
+  <div class="oculto" id="mensajes"></div>
+  <section id="flujo">
+    <div class="cont">
+      <div class="contFila">
+        <p class="boton" id="ejemplosBtn">Ejemplos</p>
+        <div class="oculto" id="contEjemplos">
+          <div id="listaEjemplos"></div>
+          <div class="oculto" id="descripcion"></div>
+        </div>
+        <p class="boton" id="usoBtn">Como usar</p>
+        <div class="oculto" id="uso">
+          <h3>Modo de uso</h3>
+          <p>El código que genera el diagrama consta de dos secciones principales:</p>
+          <h4>Definición de elementos</h4>
+          <p>El formato básico es:</p>
+          <p><em>nombre=>tipo contenido</em></p>
+          <p>(Sin espacios alrededor de la <em>=></em> y 1 espacio entre el tipo y el contenido)</p>
+          <p>Donde <em>tipo</em> es uno de los siguientes (los <em>:</em> forman parte del tipo)</p>
+          <ul>
+            <li><em>start:</em> inicio
+              <svg id="svg1" width="60" viewBox="0 0 100 30" preserveAspectRatio="xMidYMid meet"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="3" width="70" height="25" rx="20" ry="20" fill="#ffffff" stroke="#000000"
+                  stroke-width="3"></rect>
+              </svg>
+            </li>
+            <li><em>end:</em> fin
+              <svg id="svg1" width="60" viewBox="0 0 100 30" preserveAspectRatio="xMidYMid meet"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="3" width="70" height="25" rx="20" ry="20" fill="#ffffff" stroke="#000000"
+                  stroke-width="3"></rect>
+              </svg>
+            </li>
+            <li><em>operation:</em> operación
+              <svg id="svg1" width="60" viewBox="0 0 100 30" preserveAspectRatio="xMidYMid meet"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="3" width="70" height="25" fill="#ffffff" stroke="#000000" stroke-width="3"></rect>
+              </svg>
+            </li>
+            <li><em>condition:</em> condición
+              <svg id="svg1" width="60" viewBox="0 0 100 30" preserveAspectRatio="xMidYMid meet"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M 5,15 L 40,3 L 75,15 L 40,27 Z" fill="#ffffff" stroke="#000000" stroke-width="3"></path>
+            </svg>
+            </li>
+            <li><em>inputoutput:</em> entrada / salida
+              <svg id="svg1" width="60" viewBox="0 0 100 30" preserveAspectRatio="xMidYMid meet"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M 20,3 L 75,3 L 60,27 L 5,27 Z" fill="#ffffff" stroke="#000000" stroke-width="3"></path>
+            </svg>
+            </li>
+            <li><em>subroutine:</em> subrutina
+              <svg id="svg1" width="60" viewBox="0 0 100 30" preserveAspectRatio="xMidYMid meet"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="3" width="70" height="25" fill="#ffffff" stroke="#000000" stroke-width="3"></rect>
+              <rect x="15" y="3" width="50" height="25" fill="#ffffff" stroke="#000000" stroke-width="3"></rect>
+            </svg>       
+            </li>
+            <li><em>parallel:</em> comienzo de tareas en paralelo 
+              <svg id="svg1" width="60" viewBox="0 0 100 30" preserveAspectRatio="xMidYMid meet"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="3" width="70" height="25" fill="#ffffff" stroke="#000000" stroke-width="3"></rect>
+            </svg> 
+              con varias salidas</li>
+          </ul>
+
+          <h4>Relación entre los elementos</h4>
+          <p>Los elementos se relacionan entre sí mediante <em>-></em> entre sus nombres. <em>elem1->elem2</em></p>
+          <p>En el caso de la condición se presentan dos salidas, por condición verdadera o por falsa, que se indican con <em>cond(true)</em>y <em>cond(false)</em> o con <em>cond(yes)</em> y <em>cond(no)</em>.</p>
+          <p>Si se quiere cambiar la direción por defecto de los enlaces entre elementos se lo indica con <em>(left), (right), (top), (bottom)</em>, por ej.  <em>elem1(right)->elem2</em>.</p>
+            <p> En el caso de la condición con por ej <em>cond(yes, right)</em>, (esto solo funciona con yes/no y no con true/false)</p>
+
+        </div>
+      </div>
+      <div class="contFila">
+        <p class="boton" id="copiarBtn">Copiar</p>
+        <p class="boton" id="borrarBtn">Borrar</p>
+        <p class="boton" id="renderBtn">Gráficar</p>
+
+      </div>
+      <textarea name="" id="entrada" cols="30" rows="20">
+        inicio=>start: Inicio
+        fin=>end: Fin
+        
+        inicio->fin
+        </textarea>
+        <p class="boton" id="guardarBtn">Guardar</p>
+    </div>
+
+    <div class="cont">
+      <h3>Gráfico:</h3>
+      <div id="salida"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Basado en <a href="http://flowchart.js.org/" target="_blank">flowchart.js</a></p>
+    <p><a href="../../index.html">Eduardo Casanova</a></p>
+    <p>Julio de 2021</p>
+  </footer>
+
+  <script src="./recursos/raphael.min.js"></script>
+  <script src="./recursos/flowchart.min.js"></script>
+  <script src="./recursos/flujo.js"></script>
+</body>
+
+</html>

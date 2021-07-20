@@ -1,0 +1,143 @@
+[
+    {
+        "nombre": "diagrama mínimo",
+        "descripcion": "<p>Solo principio y fin</p>",
+        "codigo": [
+            "inicio=>start: Inicio",
+            "fin=>end: Fin",
+            "",
+            "inicio->fin"
+        ]
+    },
+    {
+        "nombre": "estructuras básicas: IF THEN 1",
+        "descripcion": "<p>Diagrama usando condiciones</p><p>Para las salidas se puede usar tanto <em>true/false</em> como <em>yes/no</em></p>",
+        "codigo": [
+            "inicio=>start: Inicio",
+            "fin=>end: Fin",
+            "subIni=>subroutine: código anterior",
+            "subPost=>subroutine: código posterior",
+            "subV=>subroutine: código V",
+            "cond=>condition: condición",
+            "",
+            "inicio->subIni->cond",
+            "cond(yes)->subV->subPost",
+            "cond(no)->subPost",
+            "subPost->fin"
+        ]
+    },
+    {
+        "nombre": "estructuras básicas: IF THEN 2",
+        "descripcion": "<p>Diagrama usando condiciones</p><p>Se muestra el uso de direcciones de salida</p><p><em>(left, right, top, bottom)</em></p><p>Usar las direcciones con cuidado, se puede 'enredar' el gráfico",
+        "codigo": [
+            "inicio=>start: Inicio",
+            "fin=>end: Fin",
+            "subIni=>subroutine: código anterior",
+            "subPost=>subroutine: código posterior",
+            "subV=>subroutine: código V",
+            "cond=>condition: condición",
+            "",
+            "inicio->subIni->cond",
+            "cond(yes,right)->subV->subPost",
+            "cond(no)->subPost",
+            "subPost->fin"
+        ]
+    },
+    {
+        "nombre": "estructuras básicas: IF THEN ELSE",
+        "descripcion": "<p>Diagrama usando condiciones</p>",
+        "codigo": [
+            "inicio=>start: Inicio",
+            "fin=>end: Fin",
+            "subIni=>subroutine: código anterior",
+            "subPost=>subroutine: código posterior",
+            "subV=>subroutine: código V",
+            "subF=>subroutine: código F",
+            "cond=>condition: condición",
+            "",
+            "inicio->subIni->cond",
+            "cond(true)->subV->subPost",
+            "cond(false)->subF->subPost",
+            "subPost->fin"
+        ]
+    },
+    {
+        "nombre": "estructuras básicas: bucle WHILE",
+        "descripcion": "<p>Bucle WHILE simple</p><p>notar que se necesita la(s) variable(s) a comprobar antes de ingresar al bucle, y un nuevo valor de esta dentro del mismo (sino no saldría nunca - bucle infinito)</p><p>Se diferencia de la condición (IF) en que en este se entra al rombo desde un camino, y en el while desde dos</p>",
+        "codigo": [
+            "inicio=>start: Inicio",
+            "fin=>end: Fin",
+            "subIni=>subroutine: código anterior",
+            "subPost=>subroutine: código posterior",
+            "subBucle=>subroutine: código dentro del bucle",
+            "cond=>condition: ¿ se cumple ",
+            "la condición ?",
+            "var1=>operation: valor inicial para la variable",
+            "comprobada por la condición",
+            "var2=>operation: nuevo valor para la condición",
+            "",
+            "inicio->subIni->var1->cond",
+            "cond(yes, right)->subBucle->var2(right)->cond",
+            "cond(no, bottom)->subPost",
+            "subPost->fin"
+        ]
+    },
+    {
+        "nombre": "estructuras básicas: bucle REPEAT...UNTIL (DO...WHILE)",
+        "descripcion": "<p>El código dentro del bucle se ejecuta al menos una vez.</p><p> La comprobación de la condición se realiza DESPUES de ejecutar el código que se encuentra dentro del bucle.</p><p>Dentro del código debe cambiar la variable que se controla, sino puede caer en un bucle infinito.</p>",
+        "codigo": [
+            "inicio=>start: Inicio",
+            "fin=>end: Fin",
+            "subIni=>subroutine: código anterior",
+            "subPost=>subroutine: código posterior",
+            "subBucle=>subroutine: código dentro del bucle",
+            "cond=>condition: ¿ se cumple ",
+            "la condición ?",
+            "",
+            "inicio->subIni->subBucle->cond",
+            "cond(yes)->subPost",
+            "cond(no, right)->subBucle",
+            "subPost->fin"
+        ]
+    },
+    {
+        "nombre": "ejemplo flowchart.js 1",
+        "descripcion": "<p>Copiado de los ejemplos de la librería (<a href='http://flowchart.js.org/' target='_blank' rel='noreferrer'>http://flowchart.js.org</a>), con algunas modificaciones</p><p>Muestra el cambio del texto en las salidas (con @)</p>",
+        "codigo": [
+            "inicio=>start: Inicio",
+            "fin=>end: Fin",
+            "ini1=>operation: inicialización",
+            "io=>inputoutput: entrada",
+            "sub1=>subroutine: subrutina-Polinomio",
+            "sub2 =>subroutine: subrutina-Linear",
+            "cond=>condition: lineal o polinomial",
+            "",
+            "",
+            "inicio->ini1->io->cond",
+            "cond(true@linear)->sub2 ->fin",
+            "cond(false@polynomial)->sub1(right)",
+            "sub1(right)  ->ini1"
+        ]
+    },
+    {
+        "nombre": "ejemplo flowchart.js 2",
+        "descripcion": "<p>Copiado de los ejemplos de <a href='http://flowchart.js.org/' target='_blank' rel='noreferrer'>http://flowchart.js.org</a></p><p>Con uso de direcciones y enlaces (con :&gt;)</p>",
+        "codigo": [
+            "st=>start: Start:>http://www.google.com[blank]",
+            "e=>end:>http://www.google.com",
+            "op1=>operation: My Operation",
+            "sub1=>subroutine: My Subroutine",
+            "cond=>condition: Yes or No?:>http://www.google.com",
+            "",
+            "io=>inputoutput: catch something...",
+            "para=>parallel: parallel task",
+            "",
+            "st->op1->cond",
+            "cond(yes)->io->e",
+            "cond(no)->para",
+            "para(path1, bottom)->sub1(right)->op1",
+            "para(path2, top)->op1"
+            
+        ]
+    }
+]

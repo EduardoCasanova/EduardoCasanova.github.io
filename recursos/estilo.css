@@ -124,6 +124,9 @@ a:active{
 .oculto{
     display: none;
 }
+.oculto + .separador{
+    height: 2rem;
+}
 #contacto{
     display: flex;
     flex-direction: row;

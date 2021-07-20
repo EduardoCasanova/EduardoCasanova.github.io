@@ -1,0 +1,190 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+footer,
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: darkgreen;
+    color: antiquewhite;
+    font-weight: bold;
+    width: 100vw;
+    flex: none;
+}
+
+footer a {
+    color: antiquewhite;
+}
+
+#flujo {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    flex: 1 0 auto;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+.contFila{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+button {
+    width: 8rem;
+}
+
+#entrada {
+    margin: 1rem 0 0 0;
+}
+
+#salida {
+    background-color: antiquewhite;
+    padding: 0 1rem 1rem 1rem;
+    border-radius: 1rem;
+    margin: 1rem 0 0 0;
+    min-width: 10vw;
+    min-height: 20vh;
+}
+
+#mensajes{
+    position: absolute;
+    top: 10rem;
+    left: 20rem;
+    min-height: 3rem;
+    max-width: 50vw;
+    color: rgb(58, 82, 9);
+    background-color: #e9ffd3;
+    border: 3px solid darkgreen;
+    border-radius: 1rem;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 1s ease-out;  
+}
+#mensajes.mostrar{
+    opacity: 1;  
+    transition: opacity 1s ease-in;  
+    
+}
+#mensajes.ocultar{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+#contEjemplos, #uso{
+    position: absolute;
+    top: 9.5rem;
+    left: 5rem;
+    display: flex;
+    flex-direction: row;
+    z-index: 20;
+}
+#listaEjemplos, #uso{
+    background-color: cornsilk;
+    border: 3px solid blanchedalmond;
+    border-radius: 1rem;
+    padding: 0;
+}
+#listaEjemplos p{
+    margin: 0;
+    padding: 10px 10px;
+}
+#listaEjemplos p:hover{
+    background-color: blanchedalmond;
+    cursor: pointer;
+}
+#descripcion{
+    width: calc( 100vw - 50rem );
+    max-width: calc( 100vw - 50rem );
+    color: blue;
+    background-color: cornsilk;
+    border: 3px solid blanchedalmond;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+#uso{
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    max-width: 70vw;
+}
+#uso h4{
+    margin-bottom: 0.5rem;
+}
+#uso p{
+    margin: 0.2rem 1rem;
+}
+#uso ul{
+    margin: 0.2rem;
+}
+#uso svg{
+    display: inline;
+    
+}
+em{
+    color: navy;
+    font-weight: bold;
+}
+
+
+
+.oculto{
+    display: none;
+}
+#contEjemplos.oculto, #uso.oculto{
+    display: none;
+}
+
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+/*      BOTONES                    */
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+.boton{
+    margin: 0.2rem;
+    padding: 0.4rem 1rem;
+    border-radius: 0.7rem;
+    box-shadow: 3px 3px 5px 0px #444444;
+    background-color: white;
+    cursor: pointer;
+    transition: opacity 0s;
+    display: inline-block;
+    text-align: center;
+    max-width: 7rem;
+    width: 7rem;
+}
+.boton:hover{
+    box-shadow: 1px 1px 2px 0px #444444;
+    text-shadow: 1px 1px 0px #070707;
+    color: transparent;
+}
+.boton:active{
+    opacity:0.5;
+}
+.boton-activo{
+    box-shadow: inset 2px 2px 5px 0px #444444;
+    text-shadow: 2px 2px 0px #070707;
+    color: transparent;
+}
+.boton-activo:hover{
+    box-shadow: inset 4px 4px 5px 0px #444444;
+    text-shadow: 4px 4px 0px #070707;
+    color: transparent;
+}
+.boton-desactivado{
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+
