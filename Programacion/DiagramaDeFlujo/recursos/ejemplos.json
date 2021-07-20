@@ -83,7 +83,7 @@
         ]
     },
     {
-        "nombre": "estructuras básicas: bucle REPEAT...UNTIL (DO...WHILE)",
+        "nombre": "estructuras básicas: bucle REPEAT...UNTIL",
         "descripcion": "<p>El código dentro del bucle se ejecuta al menos una vez.</p><p> La comprobación de la condición se realiza DESPUES de ejecutar el código que se encuentra dentro del bucle.</p><p>Dentro del código debe cambiar la variable que se controla, sino puede caer en un bucle infinito.</p>",
         "codigo": [
             "inicio=>start: Inicio",
