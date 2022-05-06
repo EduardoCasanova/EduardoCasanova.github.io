@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docencia</title>
+    <script>
+        const pagina = document.getElementsByTagName("html");
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            pagina[0].classList.add('dark')
+        } else {
+            pagina[0].classList.remove('dark')
+        }
+
+        // Whenever the user explicitly chooses light mode
+        // localStorage.theme = 'light'
+
+        // Whenever the user explicitly chooses dark mode
+        // localStorage.theme = 'dark'
+
+        // Whenever the user explicitly chooses to respect the OS preference
+        // localStorage.removeItem('theme')
+    </script>
+    
+    <link rel="stylesheet" href="/css/katex.min.css">
+    
+    
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+
+<body id="inicio" class="select-none bg-stone-200 dark:bg-stone-800 text-stone-800 dark:text-stone-200">
+        <header id="header" class="hidden md:block pt-2 pb-4 bg-gradient-to-br from-blue-500/50 to-blue-900/90 text-center">
+        <h1 class="text-3xl text-lime-100 pt-2 pb-1">Eduardo Casanova</h1>
+        <h2 class="text-2xl text-lime-100 pt-2 pb-1">Programación y Docencia
+    </h2></header>
+
+    <nav class="flex justify-between md:justify-end bg-gradient-to-tr from-blue-400/50 to-blue-700/80">
+  <div class="md:hidden ml-4">
+    <a href="/" class="pt-2 text-center">
+      <h1 class="text-2xl text-lime-100">Eduardo Casanova</h1>
+    </a>
+  </div>
+  <div class="flex flex-row w-fit gap-4 px-4">
+  
+<div class="relative">
+
+  <button id="Bdianoche" class="border-2 border-blue-800 dark:border-blue-400 rounded-full w-fit p-1 my-1 flex-end">
+    <div class="relative">
+
+      <img alt="" width="28" src="/imagenes/icons8-día-y-noche-100.png">
+
+    </div>
+  </button>
+
+    <div id="Mdianoche" class="absolute -left-8 top-0 z-20 scale-0 origin-top-left transition-all flex-col bg-blue-500 border-blue-800 dark:border-blue-400 rounded-xl pr-4">
+      <p class="bg-blue-600 hover:bg-blue-900 rounded-xl px-4" data-dark="dia">Día</p>
+      <p class="bg-blue-600 hover:bg-blue-900 rounded-xl px-4" data-dark="noche">Noche</p>
+      <p class="bg-blue-600 hover:bg-blue-900 rounded-xl px-4" data-dark="sistema">Sistema</p>
+    </div>
+</div> 
+
+  <div class="flex flex-col items-end md:items-center">
+    <button class="md:hidden rounded-lg m-2" id="boton">
+      <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
+        <path id="b-ham" class="text-lime-100" fill-rule="evenodd" d="M3 5a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd" />
+        <path id="b-cruz" class="hidden text-lime-100" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <div id="menu" class="absolute md:relative -translate-y-96 translate-x-96 md:translate-x-0 md:translate-y-0 mt-10 md:mt-0 px-8 py-4 md:py-0 md:h-12 transition-transform bg-gradient-to-tr from-blue-400/75 to-blue-700/90 md:bg-blue-50/0 rounded-xl">
+      <div class="flex flex-col md:flex-row gap-x-2">
+        
+        <a href="/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+          Inicio
+        </a>
+
+        
+        
+        <a href="/acerca/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+          Acerca
+        </a>
+
+        
+        
+        <a href="/docencia/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-700 text-center hover:text-lime-200 hover:bg-blue-900 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+          Docencia
+        </a>
+        
+        
+        <a href="/programacion/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+          Programación
+        </a>
+
+        
+        
+        <a href="/varios/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+          Varios
+        </a>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+</nav>
+    <div class="float-right text-base mr-4 md:mr-8 mt-2 mb-0"></div>
+    <main class="container mx-auto md:px-8">
+        <h1>Docencia</h1>
+<p>En esta sección incluyo material que voy creando para mis clases. Esto incluye teorías, ejercicios resueltos y algunas herramientas relacionadas.</p>
+<p>Iré incluyendo más material a medida que tenga tiempo de pasarlo desde el papel (antes de la cuarentena mis clases eran presenciales, o sea con lápiz y papel) o de convertir el formato de lo que hice en pdf y <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> .</p>
+<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Mis materias</h2>
+<p>Estas son las materias principales sobre las que doy clases.</p>
+<p>Si la que te interesa no está listada, pero te parece que es similar a alguna de las presentes, <a href="/acerca/#contacto">comunicate conmigo</a></p>
+<ul>
+<li>
+<p>Programación</p>
+<ul>
+<li>Algoritmos</li>
+<li>C</li>
+<li>Pascal</li>
+<li>Web (Javascript, HTML, CSS)</li>
+</ul>
+</li>
+<li>
+<p>Matemáticas</p>
+<ul>
+<li>Algebra</li>
+<li>Análisis matemático</li>
+<li>Calculo numérico</li>
+</ul>
+</li>
+<li>
+<p>Probabilidades y Estadística</p>
+</li>
+<li>
+<p>Física</p>
+<ul>
+<li>Mecánica</li>
+<li>Termodinámica</li>
+<li>Optica</li>
+<li>Electicidad y magnetismo</li>
+<li>Biofísica</li>
+</ul>
+</li>
+<li>
+<p>Química general</p>
+</li>
+</ul>
+</section>
+<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Ejercicios resueltos</h2>
+<p><strong>Nota</strong>: Si te parece que hay algún error,  no entiendes algo o tienes alguna sugerencia <a href="/acerca/#contacto">escribeme</a>.</p>
+<ul>
+<li>
+<p><a href="./ejerc_res/big_O_iterativo_1/">Cálculo del tiempo de ejecución de un algoritmo recursivo</a></p>
+<p>Álgebra aplicada al análisis de algoritmos.</p>
+<p>Ejercicio de la materia Algoritmos y Estructuras de Datos de la Facultad de Informática - UNLP,</p>
+</li>
+</ul>
+</section>
+<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Herramientas</h2>
+<ul>
+<li>
+<p><a rel="noreferrer" target="_blank" href="https://educas.shinyapps.io/Probabilidades-Normal/Probabilidades-Normal.Rmd">Calculadora gráfica para intervalos de confianza y test de hipótesis sobre la <strong>distribución normal</strong></a></p>
+<p>La herramienta permite descargar el gráfico obtenido.
+Está programada en Shiny (interfaz web para el lenguaje R).</p>
+</li>
+</ul>
+</section>
+
+    </main>
+    <a href="#inicio" id="irArriba" class="hidden fixed right-2 md:right-8 bottom-8 w-10 h-12 rounded-full ring-2 ring-blue-700 shadow-lg opacity-50 animate-bounce items-center justify-center">
+    <svg class="w-6 h-6 text-blue-700 dark:text-blue-400 rotate-180" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+</a>
+    
+
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
+

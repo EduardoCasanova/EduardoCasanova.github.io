@@ -1,0 +1,130 @@
+html{
+    font-size: 14pt;    
+}
+body{
+    margin: 2rem;
+    overflow: scroll;
+    /* user-select: none; */
+    line-height: 2rem;
+    background: linear-gradient(#fcfcfc, #e0e0e0) no-repeat fixed;
+  }
+  header{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+  }
+  section{
+      border-radius: 1rem;
+      margin: 5rem 1rem;
+      padding: 2rem 2rem;
+      box-shadow: 0.5rem 0.8rem 1.7rem rgba(0, 0, 0, 0.3);
+      background-color: white;
+  }
+  h1, h2{
+      margin: 0.3rem 0;
+      color: #031;
+      text-shadow: 8px 6px 4px rgba(0, 3, 1, 0.2);
+  }
+  a{
+      text-decoration: none;
+      color: black;
+      background-color: #F0F0FF;
+      padding: 1px 10px;
+      line-height: 1.5rem;
+  }
+  ul {
+      list-style-type: none;
+  }
+  li {
+      margin: 0;
+      padding: 0;
+  }
+  li a{
+      display: block;
+      width: -webkit-max-content;
+      width: -moz-max-content;
+      width: max-content;
+  }
+  dt{
+      font-weight: bold;
+  }
+  footer{
+      font-size: 75%;
+      background-color: #b0b0b0;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: row;
+      color:white;
+      border-radius: 1rem;
+      align-content: center;
+      margin: 1rem;
+  }
+  footer div{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-content: center;
+      width: 100%;
+  }
+  footer em{
+      color: white;
+  }
+
+  /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+  /*      BOTONES                    */
+  /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+  .boton, 
+  a{
+      margin: 0.2rem 1rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.7rem;
+      box-shadow: 3px 3px 5px 0px #444444;
+      background-color: white;
+      cursor: pointer;
+      transition: opacity 0s;
+      display: inline-block;
+      text-align: center;
+  }
+  a{
+      margin: 1rem 1rem;
+      background-color: aliceblue;
+  }
+  .boton:hover, 
+  a:hover{
+      box-shadow: 1px 1px 2px 0px #444444;
+      text-shadow: 1px 1px 0px #070707;
+      color: transparent;
+  }
+  .boton:active,
+  a:active{
+      opacity:0.5;
+  }
+  .boton_activo{
+      box-shadow: inset 2px 2px 5px 0px #444444;
+      text-shadow: 2px 2px 0px #070707;
+      color: transparent;
+  }
+  .boton_activo:hover{
+      box-shadow: inset 4px 4px 5px 0px #444444;
+      text-shadow: 4px 4px 0px #070707;
+      color: transparent;
+  }
+  .boton_desactivado{
+      cursor: not-allowed;
+      opacity: 0.3;
+  }
+  
+  
+  /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+  /* TABULACIONES  */
+  /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+  .margen1 {
+      margin-left: 2rem;
+  }
+  .margen2 {
+      margin-left: 4rem;
+  }
+  .margen3 {
+      margin-left: 6rem;
+  }

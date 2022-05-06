@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./normalize.min.css">
+    <link rel="stylesheet" href="./estilo.css">
+    <title>Programación Funcional</title>
+</head>
+
+<body>
+    <h1>Programación Funcional</h1>
+
+    <section>
+
+
+        <h2>¿De qué se trata?</h2>
+        <p>Es uno de los <strong>"paradigmas de programación"</strong>, es decir una de las formas en que un lenguaje
+            entiende los programas que se realizan con el mismo.</p>
+        <h3>Entre los paradigmas más utilizados se encuentran: </h3>
+
+        <dl>
+            <dt>Programación imperativa</dt>
+            <dd>El código es ejecutado siguiendo un orden desde el principio del programa hasta su final. Sus elementos
+                principales son las asignaciones, que producen un cambio de estado de una variable, y las estructuras de
+                control que permiten modificar el flujo de ejecución de las instrucciones de un programa (if, bucles,
+                etc.).</dd>
+            <dt>Programación Orientada a Objetos (POO)</dt>
+            <dd>Las variables y funciones se agrupan dentro de estructuras (objetos) que interactúan enviando mensajes
+                entre ellos.</dd>
+            <dt>Programación Funcional</dt>
+            <dd>
+                <p>El código se reparte en funciones, en general simples, que pasan a ser un elemento fundamental
+                del programa. Estas funciones pueden actuar al nivel de las variables en otros paradigmas, pudiendo
+                utilizarse como parámetros de otras funciones, ser retornadas por estas y anidarse (funciones dentro de
+                funciones).</p>
+                <p>Los datos en general no son variables, y se evitan la mayoría de los efectos colaterales.</p>
+                <p>
+                    En un lenguaje funcional puro no hay cambios de estado; programar consiste en definir las
+                    relaciones funcionales que transforman la entrada en la salida esperada.
+                </p>
+            </dd>
+        </dl>
+    </section>
+    <section>
+        <h2>Lenguajes funcionales</h2>
+        <p>La programación funcional se comienza a estudiar en los años '30 (antes de la invención de las computadoras) para resolver algunos problemas matemáticos.</p>
+        <p>A fines de los '50 se crea el primer lenguaje funcional: LISP, utilizado en la investigación de la inteligencia artificial</p>
+        <p>Durante un tiempo el paradigma funcional tuvo poco uso en la industria (todavía lo tiene), pero ultimamente está aumentando su utilización, con la aparición de nuevos lenguajes y la extensión de otros para utilizar conceptos funcionales.</p>
+        <p>Como ejemplo de lenguajes funcionales tenemos: </p>
+        <ul>
+            <li>Lisp</li>
+            <li>Clojure</li>
+            <li>Scala</li>
+            <li>Scheme</li>
+            <li>Haskell</li>
+            <li>OCaml</li>
+            <li>R (lenguaje orientado al análisis de datos)</li>
+            <li>y otros</li>
+        </ul>
+        <p>Y de lenguajes no funcionales que agregan elementos funcionales:</p>
+        <ul>
+            <li>Javascript</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>Perl</li>
+            <li>Ruby</li>
+            <li>etc.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Programación funcional y JavaScript</h2>
+        <p>JavaScript, desde su creación contiene elementos funcionales: las clausuras, las funciones como valores, la delegación de prototipos y otros son ideas tomadas de los lenguajes Scheme y Self. Por eso JavaScript se adapta bastante bien a la programación funcional.</p>
+        <p>Además, ES6 añade algunas nuevas funcionalidades muy interesantes para el
+        desarrollo funcional como la notación que expande elementos iterables (por ej. String, Array, Map, Set ) con <strong>...</strong> o las funciones flecha <strong>=></strong></p>
+        <p>Otros elementos funcionales se utilizan en el manejo de arreglos: <strong>filter, map, reduce</strong></p>
+        <p>También hay librerías que utilizan programación funcional como <strong>React y Redux</strong> entre otras.</p>
+        <p>Se pueden usar algunos lenguajes como <strong>ClojureScript y Elm</strong> que generan código JavaScript</p>
+
+    </section>
+
+    <section>
+        <h2>Algunas ventajas y desventajas de programar funcionalmente</h2>
+
+        <h3>Ventajas</h3>
+        <ul>
+            <li>Altos niveles de abstracción: El código muestra un mayor énfasis en el "¿qué se hace?" en lugar del "¿cómo se hace?".</li>
+            <li>Código declarativo y comprensible: Debido a los altos niveles de abstracción, los programas que aplican este paradigma suelen ser más cortos y fáciles de entender que sus versiones en programación imperativa.</li>
+            <li>Ausencia de efectos colaterales. Las funciones solo procesan su entrada y entregan una salida, sin tener otros efectos.</li>
+            <li>Proceso de depuración menos problemático. Al haber pocas o ninguna variables es más fácil hacer un seguimiento (traza) de la ejecución del código.</li>
+            <li>Evaluación perezosa: Esta estrategia de evaluación permite realizar cálculos por demanda, evitando gasto computacional innecesario.</li>
+        </ul>
+        <h3>Desventajas</h3>
+        <ul>
+            <li>Dificultad inicial para producir buen código, sobre todo para programadores muy acostumbrados a utilizar otro paradigma como la POO.</li>
+            <li>Generación de grandes cantidades de "short-lived garbage", es decir de elementos que dejan de usarse y deben eliminarse de memoria. Esto en parte es debido a que en lugar de tener valores que cambian se crean nuevos y se eliminan los que ya no sirven.</li>
+            <li>En algunos casos hay una menor eficiencia en el uso de CPU comparados con su contraparte imperativa.</li>
+            <li>Poca documentación, al menos comparando con lenguajes de mayor difusión. Aunque está mejorando al aumentar su utilización.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Ejemplos</h2>
+        <h3>Clausuras (closures)</h3>
+        <p>Son funciones retornadas por otras funciones, que mantienen las variables del entorno presentes en el momento en que fueron creadas.</p>
+        <code><pre>
+            function sumaMultiplica(x){
+                let acumulador = 0;
+                return function(y){
+                    acumulador =  acumulador + x * y
+                    return acumulador;
+                }
+              } 
+            // uso:
+
+            let por5 = sumaMultiplica(5);
+            let por17 = sumaMultiplica(17);
+            
+
+            let a = por5(9);    // a = 45 (0 + 9 * 5)
+            let b = por5(4);    // b = 65 (45 + 5 * 4)
+
+            let c = por17(23)   // c = 391 (0 + 17 * 23) el acumulador es distinto al de por5
+            let d = por17(2)    // d = 425 (391 + 17 * 2)
+
+        </pre></code>
+
+        <p>Al llamar a la función <code>sumaMultiplica(x)</code> se retorna la función anónima (es decir sin nombre) de su interior, y la función <code>sumaMultiplica(x)</code> deja de estar activa, pero al asignarla a una variable <code>let por5 = multiplica(5);</code> esta conserva la función interna retornada junto con cualquier parámetro recibido por la función externa (el 5) y cualquier variable que se encuentre en la misma (el acumulador=0). </p>
+        <h3></h3>
+    </section>
+
+
+</body>
+
+</html>

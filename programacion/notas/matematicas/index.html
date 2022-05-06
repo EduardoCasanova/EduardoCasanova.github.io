@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas</title>
+    <script>
+        const pagina = document.getElementsByTagName("html");
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            pagina[0].classList.add('dark')
+        } else {
+            pagina[0].classList.remove('dark')
+        }
+
+        // Whenever the user explicitly chooses light mode
+        // localStorage.theme = 'light'
+
+        // Whenever the user explicitly chooses dark mode
+        // localStorage.theme = 'dark'
+
+        // Whenever the user explicitly chooses to respect the OS preference
+        // localStorage.removeItem('theme')
+    </script>
+    
+    <link rel="stylesheet" href="/css/katex.min.css">
+    
+    
+    <link rel="stylesheet" href="/css/dracula-prism.min.css">
+    
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+
+<body id="inicio" class="select-none bg-stone-200 dark:bg-stone-800 text-stone-800 dark:text-stone-200">
+        <header id="header" class="hidden md:block pt-2 pb-4 bg-gradient-to-br from-blue-500/50 to-blue-900/90 text-center">
+        <h1 class="text-3xl text-lime-100 pt-2 pb-1">Eduardo Casanova</h1>
+        <h2 class="text-2xl text-lime-100 pt-2 pb-1">Programación y Docencia
+    </h2></header>
+
+    <nav class="flex justify-between md:justify-end bg-gradient-to-tr from-blue-400/50 to-blue-700/80">
+  <div class="md:hidden ml-4">
+    <a href="/" class="pt-2 text-center">
+      <h1 class="text-2xl text-lime-100">Eduardo Casanova</h1>
+    </a>
+  </div>
+  <div class="flex flex-row w-fit gap-4 px-4">
+  
+<div class="relative">
+
+  <button id="Bdianoche" class="border-2 border-blue-800 dark:border-blue-400 rounded-full w-fit p-1 my-1 flex-end">
+    <div class="relative">
+
+      <img alt="" width="28" src="/imagenes/icons8-día-y-noche-100.png">
+
+    </div>
+  </button>
+
+    <div id="Mdianoche" class="absolute -left-8 top-0 z-20 scale-0 origin-top-left transition-all flex-col bg-blue-500 border-blue-800 dark:border-blue-400 rounded-xl pr-4">
+      <p class="bg-blue-600 hover:bg-blue-900 rounded-xl px-4" data-dark="dia">Día</p>
+      <p class="bg-blue-600 hover:bg-blue-900 rounded-xl px-4" data-dark="noche">Noche</p>
+      <p class="bg-blue-600 hover:bg-blue-900 rounded-xl px-4" data-dark="sistema">Sistema</p>
+    </div>
+</div> 
+
+  <div class="flex flex-col items-end md:items-center">
+    <button class="md:hidden rounded-lg m-2" id="boton">
+      <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
+        <path id="b-ham" class="text-lime-100" fill-rule="evenodd" d="M3 5a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd" />
+        <path id="b-cruz" class="hidden text-lime-100" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+      </svg>
+    </button>
+    <div id="menu" class="absolute md:relative -translate-y-96 translate-x-96 md:translate-x-0 md:translate-y-0 mt-10 md:mt-0 px-8 py-4 md:py-0 md:h-12 transition-transform bg-gradient-to-tr from-blue-400/75 to-blue-700/90 md:bg-blue-50/0 rounded-xl">
+      <div class="flex flex-col md:flex-row gap-x-2">
+        
+        <a href="/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+          Inicio
+        </a>
+
+        
+        
+        <a href="/acerca/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+          Acerca
+        </a>
+
+        
+        
+        <a href="/docencia/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+          Docencia
+        </a>
+
+        
+        
+        <a href="/programacion/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-700 text-center hover:text-lime-200 hover:bg-blue-900 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+          Programación
+        </a>
+        
+        
+        <a href="/varios/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+          Varios
+        </a>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+</nav>
+    <div class="float-right text-base mr-4 md:mr-8 mt-2 mb-0">30 de abril de 2022</div>
+    <main class="container mx-auto md:px-8">
+        <h1>Escribiendo fórmulas matemáticas</h1>
+<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Introducción</h2>
+<p>En muchas páginas debo escribir fórmulas matemáticas, tanto en las dedicadas a estas materias como las que tratan de Física y otras.
+Fuera de este sitio empleo <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> para este fin, por lo que seguiré haciendolo dentro del mismo.</p>
+<p>Hay varias maneras de lograr este objetivo:</p>
+<h3>¿Donde hacer la transformación?</h3>
+<ul>
+<li>En una aplicación externa que transforme <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> a HTML (como ser <a rel="noreferrer" target="_blank" href="https://pandoc.org">pandoc</a>) o a gráficos SVG u otros formatos.</li>
+<li>En el cliente (navegador del usuario) usando las librerías javascript MathJax o Katex. Esta era la solución que usaba hasta ahora.</li>
+<li>En el servidor. De nuevo con  MathJax o Katex.</li>
+<li>En la etapa de generación de código, aplicando  MathJax o Katex (si, otra vez) a través de Eleventy o de Markdow-It que el anterior usa para convertir archivos markdown a HTML.</li>
+</ul>
+<p>Por el tipo de páginas que estoy creando, me decidí por una combinación del segundo y el último método.</p>
+<p>Para las páginas con <strong>contenido puramente estático</strong>, como ser algunos de los problemas resueltos, o teoría hago la conversión al generar el código HTML.</p>
+<p>Para las que tienen <strong>contenido dinámico</strong>, es decir que el contenido puede cambiar según la interacción con el usuario utilizo una combinación de ambos métodos.</p>
+<p>Ya que el sitio se crea como estático ( ver <a href="./jamstack/">jamstack</a> ) no me sirve la tercera solución propuesta.</p>
+<p>En algún caso que necesito gráficos generados con <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> recurro a herramientas externas que los transforman al formato SVG, que se incluye sin problemas dentro del html (El soporte para paquetes gráficos tanto en MathJax como en Katex es muy limitado).</p>
+</section>
+<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Uso de Katex</h2>
+<p>Después de algunas comparaciones entre MathJax y Katex me decidí por este último, principamente por problemas que se presentaron con algunas instrucciones <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> como ser <em>\underbrace</em> en MathJax, aunque puedo cambiar de librería en el futuro (MathJax es más completa que Katex).</p>
+<p>La transformación de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> a HTML se puede realizar en distintas etapas de la compilación del sitio:</p>
+<ul>
+<li>Al procesar el markdown para obtener el HTML</li>
+<li>Sobre el HTML, mediante eleventy</li>
+<li>Sobre el HTML, luego del proceso con eleventy, por ejemplo aplicando postHTML u otro método sobre el "bundler" (en este caso estoy usando <em>snowpack</em>).</li>
+</ul>
+<p>Elijo el primer método. Para ello aplico un plugin a la librería <em>markdown-it</em> que es la encargada de transformar el .md a .html.</p>
+<p>De los plugins disponibles elijo <em>@iktakahiro/markdown-it-katex</em> ya que en las pruebas que hice funcionó bien,y está relativamente actualizado.</p>
+</section>
+<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Instalación y configuración</h2>
+<p>Instalo Katex y el plugin:</p>
+<p><code>npm i -D katex @iktakahiro/markdown-it-katex</code></p>
+<p class="w-fit mb-2 px-4 py-2 bg-blue-900 text-stone-200 rounded-lg">archivo: eleventy.js</p>
+<pre class="language-js"><code class="language-js"><br><span class="token comment">// dentro de </span><br><span class="token comment">// module.exports = function (eleventyConfig) {</span><br><br>  <span class="token keyword">let</span> markdownIt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"markdown-it"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token keyword">let</span> markdownItKatex <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"@iktakahiro/markdown-it-katex"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  <span class="token keyword">let</span> options <span class="token operator">=</span> <span class="token punctuation">{</span><br>    <span class="token literal-property property">html</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">breaks</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">linkify</span><span class="token operator">:</span> <span class="token boolean">true</span><br>  <span class="token punctuation">}</span><span class="token punctuation">;</span><br><br>  <span class="token keyword">let</span> markdownLib <span class="token operator">=</span> <span class="token function">markdownIt</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>markdownItKatex<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string-property property">"throwOnError"</span> <span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token string-property property">"errorColor"</span> <span class="token operator">:</span> <span class="token string">" #cc0000"</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>  eleventyConfig<span class="token punctuation">.</span><span class="token function">setLibrary</span><span class="token punctuation">(</span><span class="token string">"md"</span><span class="token punctuation">,</span> markdownLib<span class="token punctuation">)</span><span class="token punctuation">;</span><br></code></pre>
+<p>El código anterior está basado en:</p>
+<p><a rel="noreferrer" target="_blank" href="https://www.samroelants.com/blog/configuring-a-blog-with-eleventy/">https://www.samroelants.com/blog/configuring-a-blog-with-eleventy/</a></p>
+<p>modificado para usar el plugin <em>@iktakahiro/markdown-it-katex</em>
+en lugar de <em>markdown-it-katex</em> que está desactualizado.</p>
+</section>
+<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Escribiendo fórmulas</h2>
+<p>El uso de <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> dentro de markdown se realiza encerrando la expresión entre signos $ (uno para mantenerse dentro de la linea o dos para crear un bloque aparte).</p>
+<p>Por ejemplo <code>$\sum_{i=1}^n x_i$</code> para obtener <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n x_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.104002em;vertical-align:-0.29971000000000003em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> dentro del párrafo.</p>
+<p>O <code>$$\sum_{i=1}^n x_i$$</code> para tenerlo en un bloque aparte:</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n x_i
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+</section>
+
+    </main>
+    <a href="#inicio" id="irArriba" class="hidden fixed right-2 md:right-8 bottom-8 w-10 h-12 rounded-full ring-2 ring-blue-700 shadow-lg opacity-50 animate-bounce items-center justify-center">
+    <svg class="w-6 h-6 text-blue-700 dark:text-blue-400 rotate-180" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+</a>
+    
+
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
+

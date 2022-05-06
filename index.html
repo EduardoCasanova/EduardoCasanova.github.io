@@ -1,113 +1,65 @@
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <title>Eduardo</title>
-  <link rel="stylesheet" href="./recursos/normalize.min.css">
-  <link rel="stylesheet" href="./recursos/estilo.css">
+<!DOCTYPE html><html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduardo Casanova</title>
+    <link rel="stylesheet" href="./css/estilo.css">
 </head>
 
-<body>
-  <header>
-    <h1>Eduardo Casanova</h1>
-    <h2>Programación y Docencia</h2>
-  </header>
-  <section>
-    <h2>Introducción:</h2>
-    <p>En estas páginas iré publicando algunos de mis proyectos, tanto de programación como relacionados con la
-      docencia(herramientas, apuntes teóricos, ejercicios resueltos, etc).</p>
-  </section>
-  <section>
-    <h2>Acerca de mi:</h2>
-    <p>Me dedico a la docencia y a la programación.</p>
-    <p> <em>Docencia:</em> actualmente doy clases particulares para alumnos universitarios de
-      distintas carreras en temas relacionados a las ciencias exactas.</p>
-    <p><em>Programación:</em> trabajo principalmente sobre html, css, javascript y bash. Tengo experiencia en otros lenguajes como C, R, Java, Delphi, Pascal, Python, y conocimientos de varios más.</p>
-    <div id="contacto">
-      <a href="https://www.linkedin.com/in/pedroeduardocasanova" target="_blank"><img src="./recursos/linkedin.png"
-          alt="Linkedin" height="20
-        "> </a>
-      <a href="https://drive.google.com/file/d/1tXxAzE3GMO_IkFxGDaeKPQwgvSGqV-AQ/view?usp=sharing"
-        target="_blank">Curriculum (pdf)</a>
-      <p>Email : <span class="seleccionable">casanovaProgramacion@gmail.com</span></p>
-    </div>
-  </section>
-  <section>
-    <h2>Mis materias:</h2>
-    <p>Doy clases a nivel universitario en:</p>
-    <ul>
-      <li>Programación (algoritmos, Pascal, C, JavaScript)</li>
-      <li>Física</li>
-      <li>Matemáticas</li>
-      <li>Probabilidades</li>
-      <li>Estadística</li>
-      <li>Química</li>
-    </ul>
-    <p>Vivo en la ciudad de La Plata, Argentina, desde donde doy clases a distancia y presenciales (cuando termine la
-      cuarentena).</p>
-    <p>La mayoría de mis alumnos pertenecen a distintas universidades de la región: <span>UNLP</span>,
-      <span>UCALP</span>, <span>UTN</span>, etc, principalmente de las facultades de Ingeniería, Informática, Económicas
-      y Exactas, y otras que dictan materias relacionadas.
-    </p>
-  </section>
-  <section>
-    <h2>Material:</h2>
-    <p>Iré subiendo material a medida que lo cree y que cambie el formato del antiguo (pdfs).</p>
-    <h3>Herramientas</h3>
-    <ul>
-      <li>
-        <a href="./Programacion/DiagramaDeFlujo/flujo.html">Diagrama De Flujo</a>
-        <p class="margen2">Dibuja diagramas de flujo a partir de una descripción, utilizando la librería flowchart.js
-        </p>
-      </li>
-      <li>
-        <a href="https://educas.shinyapps.io/Probabilidades-Normal/Probabilidades-Normal.Rmd">Curva normal:
-          Calculadora gráfica para intervalos de confianza y test de hipótesis</a>
-        <p class="margen2">Permite guardar el gráfico generado. Realizado con <span>Shiny</span> y <span>R</span></p>
-      </li>
-    </ul>
-    <h3>Ejercicios explicados:</h3>
-    <p>En general pueden aplicarse en materias similares de otras carreras distintas a las indicadas.</p>
-    <p>Las páginas con muchas fórmulas pueden tardar un poco en mostrarse completamente la primera vez que se cargan (el
-      navegador tiene un trabajo extra en la presentación)</p>
-    <p>Si les parece que hay algún error o algo que debería cambiar por favor comuniquenmelo.</p>
+<body class="portada h-screen min-h-fit select-none bg-stone-200 dark:bg-stone-800">
+    <header class="pt-2 pb-4 bg-gradient-to-br from-blue-600/50 to-blue-900/80 text-center">
+        <h1 class="text-4xl text-lime-200">Eduardo Casanova</h1>
+        <h2 class="text-3xl text-lime-200">Programación y Docencia
+    </h2></header>
+    <main class="container px-4 md:px-16">
 
-    <ul>
-      <li>
-        <h4>Matemáticas</h4>
+        
 
-        <a href="./Matematicas/TeoriaDeErrores.html">Teoría de errores</a>
-        <p class="margen2">materia: <strong> Matematica D - Ingeniería Ambiental -UCALP</strong></p>
+        <div class="mx-4 my-12 grid grid-flow-row auto-rows-max justify-evenly gap-4 md:gap-12 grid-cols-1 md:grid-cols-2">
+            
+            <a href="/docencia/">
+                <div class="p-4 bg-gradient-to-br from-blue-600/25 to-blue-900/90 rounded-lg flex flex-col justify-center items-center origin-bottom -skew-x-12 hover:-skew-x-6 transition duration-300 ease-in-out">
+                    <h1 class="text-4xl font-bold text-lime-200">Docencia</h1>
+                    <h2 class="text-2xl text-lime-200">
+                        
+                        Teorías, ejercicios ...</h2>
+                    
+                </div>
+            </a>
+            
+            <a href="/programacion/">
+                <div class="p-4 bg-gradient-to-br from-blue-600/25 to-blue-900/90 rounded-lg flex flex-col justify-center items-center origin-bottom -skew-x-12 hover:-skew-x-6 transition duration-300 ease-in-out">
+                    <h1 class="text-4xl font-bold text-lime-200">Programación</h1>
+                    <h2 class="text-2xl text-lime-200">
+                        
+                        Tutoriales, programas ...</h2>
+                    
+                </div>
+            </a>
+            
+            <a href="/acerca/">
+                <div class="p-4 bg-gradient-to-br from-blue-600/25 to-blue-900/90 rounded-lg flex flex-col justify-center items-center origin-bottom -skew-x-12 hover:-skew-x-6 transition duration-300 ease-in-out">
+                    <h1 class="text-4xl font-bold text-lime-200">Acerca de ...</h1>
+                    <h2 class="text-2xl text-lime-200">
+                        
+                        Sobre mí y este sitio</h2>
+                    
+                </div>
+            </a>
+            
+            <a href="/varios/">
+                <div class="p-4 bg-gradient-to-br from-blue-600/25 to-blue-900/90 rounded-lg flex flex-col justify-center items-center origin-bottom -skew-x-12 hover:-skew-x-6 transition duration-300 ease-in-out">
+                    <h1 class="text-4xl font-bold text-lime-200">Varios</h1>
+                    <h2 class="text-2xl text-lime-200">
+                        
+                    &nbsp;
+                    
+                </h2></div>
+            </a>
+            
+        </div>
 
-        <a href="./Matematicas/EcuacionesNoLineales.html">Ecuaciones no lineales</a>
-        <p class="margen2">materia: <strong> Matematica D - Ingeniería Ambiental -UCALP</strong></p>
-        <p class="margen2">Metodos de bisección, Newton-Raphson, punto fijo y secante</p>
-
-      </li>
-      <li>
-        <h4>Programación</h4>
-        <!-- <a href="./programacion/index.html">Introducción a la programación</a>
-        <p class="margen2">materia: <strong>CADP- Conceptos de Algoritmos, Datos y Programas, Facultad de Informática -
-            UNLP</strong></p> -->
-        <a href="./AyED/Tiempos_de_ejecucion/iterativo_1.html">Cálculo de tiempos de ejecución de un algoritmo
-          iterativo.</a>
-        <p class="margen2">materia: <strong> Algoritmos y Estructuras de Datos de la Facultad de Informática -
-            UNLP</strong></p>
-      </li>
-    </ul>
+    </main>
 
 
-  </section>
-  <section>
-    <h2>Varios :</h2>
-    <ul>
-      <li><a href="./MVC/index.html">Introducción al patrón de diseño MVC (Modelo, Vista, Controladores)</a>
-        <p class="margen2">Ejemplos explicados y análisis de código (javascript).</p>
-      </li>
-    </ul>
-  </section>
-
-</body>
-
-</html>
+</body></html>

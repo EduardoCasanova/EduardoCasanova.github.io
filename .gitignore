@@ -1,6 +1,8 @@
-pruebas/
-normalize.min.css
-normalize.css
-notas.txt
-todo.txt
-
+node_modules/
+build/
+eleventy/
+recursos/
+bak/
+*.bak
+*.txt
+pruebas.html
