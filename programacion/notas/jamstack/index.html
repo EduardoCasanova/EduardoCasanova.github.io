@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jamstack</title>
+    <link rel="shortcut icon" href="/imagenes/fav2_32.png" type="image/png">
     <script>
         const pagina = document.getElementsByTagName("html");
 
@@ -19,83 +20,119 @@
     <link rel="stylesheet" href="/css/estilo.css">
 </head>
 
+
 <body id="inicio" class="select-none bg-stone-200 dark:bg-stone-800 text-stone-800 dark:text-stone-200">
-        <header id="header" class="hidden md:block pt-2 pb-4 bg-gradient-to-br from-blue-500/50 to-blue-900/90 text-center">
-        <h1 class="text-3xl text-lime-100 pt-2 pb-1">Eduardo Casanova</h1>
-        <h2 class="text-2xl text-lime-100 pt-2 pb-1">Programación y Docencia
-    </h2></header>
 
-    <nav class="flex justify-between md:justify-end bg-gradient-to-tr from-blue-400/50 to-blue-700/80">
-  <div class="md:hidden ml-4">
-    <a href="/" class="pt-2 text-center">
-      <h1 class="text-2xl text-lime-100">Eduardo Casanova</h1>
-    </a>
-  </div>
-  <div class="flex flex-row w-fit gap-4 px-4">
-  
-<div class="relative">
+    
 
-  <button id="Bdianoche" class="border-2 border-blue-800 dark:border-blue-400 bg-blue-200 rounded-full w-fit p-1 my-1 flex-end">
+    <div class="flex justify-between md:block bg-gradient-to-tr from-blue-100/30 to-blue-500/50 dark:from-blue-500/50 dark:to-blue-900/90 md:bg-none">
+
+  <header>
+    <div class="float-left md:hidden ml-4">
+      <a href="/" class="pt-2 flex justify-start">
+        <img class="inline dark:hidden" src="/imagenes/favicon_a_32.png" alt="icono" width="32">
+        <img class="hidden dark:inline" src="/imagenes/favicon_a_32_dark.png" alt="icono" width="32">
+        <h1 class="text-2xl">Eduardo Casanova</h1>
+      </a>
+
+    </div>
+    <div class="hidden md:flex flex-row justify-center items-center pt-2 pb-4 bg-gradient-to-br from-blue-500/50 to-blue-900/90 text-center">
+      <div>
+        <img class="inline dark:hidden" src="/imagenes/favicon_a_32.png" alt="icono" width="64">
+        <img class="hidden dark:inline" src="/imagenes/favicon_a_32_dark.png" alt="icono" width="64">
+      </div>
+      <div>
+        <h1 class="text-3xl pt-2 pb-1">Eduardo Casanova</h1>
+        <h2 class="text-2xl pt-2 pb-1">Programación y Docencia</h2>
+      </div>
+    </div>
+  </header>
+
+  <div class="flex justify-end">
+    <div class="flex flex-row w-fit gap-4 px-4 md:px-0">
+      <div class="md:absolute md:top-4 md:right-4">
+        <div class="relative">
+
+  <button id="Bdianoche" class="border-2 border-blue-800 dark:border-blue-400 bg-blue-200 rounded-full w-fit p-1 my-1 flex-end active:scale-110 origin-center">
     <div class="relative">
-
       <img alt="" width="28" src="/imagenes/icons8-día-y-noche-100.png">
-
     </div>
   </button>
+  <div id="Mdianoche" class="absolute right-0 top-12 z-20 scale-0 origin-top-left transition-all flex-col bg-blue-500 border-blue-800 dark:border-blue-400 rounded-xl pr-4">
+    <p class="bg-blue-300 dark:bg-blue-600 hover:bg-blue-900 hover:text-blue-200 dark:hover:bg-blue-300 dark:hover:text-blue-900 rounded-xl px-4 active:scale-110 origin-center" data-dark="dia">Día</p>
+    <p class="bg-blue-300 dark:bg-blue-600 hover:bg-blue-900 hover:text-blue-200 dark:hover:bg-blue-300 dark:hover:text-blue-900 rounded-xl px-4 active:scale-110 origin-center" data-dark="noche">Noche</p>
+    <p class="bg-blue-300 dark:bg-blue-600 hover:bg-blue-900 hover:text-blue-200 dark:hover:bg-blue-300 dark:hover:text-blue-900 rounded-xl px-4 active:scale-110 origin-center" data-dark="sistema">Sistema</p>
+  </div>
+</div>
+      </div>
+      <nav class="flex flex-col items-end md:items-center">
+        <button class="md:hidden rounded-lg m-2" id="Bmenu">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
+            <path id="b-ham" fill-rule="evenodd" d="M3 5a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd" />
+            <path id="b-cruz" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
+        <div id="menu" class="absolute md:relative -translate-y-96 translate-x-96 md:translate-x-0 md:translate-y-0 mt-10 md:mt-0 px-8 py-4 md:py-0 md:h-12 transition-transform bg-gradient-to-tr from-blue-400/75 to-blue-700/90 md:bg-blue-50/0 rounded-xl md:rounded-none md:rounded-bl-2xl">
+          <div class="flex flex-col md:flex-row gap-x-2">
+            
+            <a href="/" class="w-28 my-1 md:my-2 border-2 border-blue-100 rounded-lg text-blue-100 bg-blue-500 text-center hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+              Inicio
+            </a>
 
-    <div id="Mdianoche" class="absolute -left-8 top-0 z-20 scale-0 origin-top-left transition-all flex-col bg-blue-500 border-blue-800 dark:border-blue-400 rounded-xl pr-4">
-      <p class="bg-blue-600 hover:bg-blue-900 rounded-xl px-4" data-dark="dia">Día</p>
-      <p class="bg-blue-600 hover:bg-blue-900 rounded-xl px-4" data-dark="noche">Noche</p>
-      <p class="bg-blue-600 hover:bg-blue-900 rounded-xl px-4" data-dark="sistema">Sistema</p>
-    </div>
-</div> 
+            
+            
+            <a href="/acerca/" class="w-28 my-1 md:my-2 border-2 border-blue-100 rounded-lg text-blue-100 bg-blue-500 text-center hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+              Acerca
+            </a>
 
-  <div class="flex flex-col items-end md:items-center">
-    <button class="md:hidden rounded-lg m-2" id="boton">
-      <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
-        <path id="b-ham" class="text-lime-100" fill-rule="evenodd" d="M3 5a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd" />
-        <path id="b-cruz" class="hidden text-lime-100" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-      </svg>
-    </button>
-    <div id="menu" class="absolute md:relative -translate-y-96 translate-x-96 md:translate-x-0 md:translate-y-0 mt-10 md:mt-0 px-8 py-4 md:py-0 md:h-12 transition-transform bg-gradient-to-tr from-blue-400/75 to-blue-700/90 md:bg-blue-50/0 rounded-xl">
-      <div class="flex flex-col md:flex-row gap-x-2">
-        
-        <a href="/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
-          Inicio
-        </a>
+            
+            
+            <a href="/docencia/" class="w-28 my-1 md:my-2 border-2 border-blue-100 rounded-lg text-blue-100 bg-blue-500 text-center hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+              Docencia
+            </a>
 
-        
-        
-        <a href="/acerca/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
-          Acerca
-        </a>
+            
+            
+            <a href="/programacion/" class="w-28 my-1 md:my-2 border-2 border-blue-100 rounded-lg text-blue-100 bg-blue-700 text-center hover:bg-blue-900 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+              Programación
+            </a>
+            
+            
+            <a href="/varios/" class="w-28 my-1 md:my-2 border-2 border-blue-100 rounded-lg text-blue-100 bg-blue-500 text-center hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+              Varios
+            </a>
 
-        
-        
-        <a href="/docencia/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
-          Docencia
-        </a>
-
-        
-        
-        <a href="/programacion/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-700 text-center hover:text-lime-200 hover:bg-blue-900 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
-          Programación
-        </a>
-        
-        
-        <a href="/varios/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
-          Varios
-        </a>
-
+            </div>
         </div>
+      </nav>
     </div>
   </div>
 </div>
 
-</nav>
+    
+    
+
+    
+
+    <div class="flex flex-row flex-wrap justify-between pt-0 pb-0 px-4">
+        
+        <div class="h-1 w-1 invisible"></div>
+
+        
+
+
+        
+        <a href="/programacion/notas/eleventy1/" class="px-2 md:px-4 py-2 bg-blue-200 dark:bg-blue-900 border-2 border-blue-900 dark:border-blue-200 rounded-r-full rounded-l-lg">
+            Eleventy</a>
+        
+    </div>
+
+    
+
+
     <div class="float-right text-base mr-4 md:mr-8 mt-2 mb-0">22 de abril de 2022</div>
     <main class="container mx-auto md:px-8">
-        <h1>Jamstack</h1>
+        <h1>Introducción a Jamstack.</h1>
 <p>Con estos comentarios inicio una serie sobre el uso de <a rel="noreferrer" target="_blank" href="https://www.11ty.dev/">eleventy</a>, en base a las notas que fuí tomando al desarrollar varios sitios usando este <strong>SSG</strong> (generador de sitios estáticos), y al actualizar este.</p>
 <section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Introducción</h2>
 <p>En muchos casos en que debemos crear un sitio encontramos que todo o parte de su contenido es estático, es decir que siempre el servidor va a entregar las mismas páginas (aunque puede haber algunos cambios según el cliente), no necesitando acceso a bases de datos, ni procesamiento en el backend.</p>
@@ -104,7 +141,7 @@
 <p>Nosotros creamos el contenido y la estructura y el SSG se encarga de las tareas rutinarias y deja el sitio listo para publicar en el servidor que elijamos (algunos como <a rel="noreferrer" target="_blank" href="https://www.netlify.com/">Netlify</a> o <a rel="noreferrer" target="_blank" href="https://vercel.com/">Vercel</a> ofrecen una mejor integración si utilizamos git).</p>
 <p>En los últimos años se crearon muchos SSG, varios de los cuales se describen en <a rel="noreferrer" target="_blank" href="https://jamstack.org/">jamstack.org</a>.</p>
 <p>Cada SSG usa varios lenguajes para cumplir con su tarea, unos de base y otros para los "templates", "layouts" y contenidos.</p>
-<p>Al momento de escribir esta página (abril de 2022) están listados en <a rel="noreferrer" target="_blank" href="http://Jamstack.org">Jamstack.org</a> <a rel="noreferrer" target="_blank" href="https://jamstack.org/generators/">333 generadores</a> que usan 45 lenguajes distintos de base y algunos más para las plantillas, por lo que tenemos de donde elegir según lo que querramos desarrollar y los lenguajes/frameworks con los que nos sintamos más cómodos (esto puede ser una ventaja o un problema al decidir cual usar -yo probé varios antes de elegir Eleventy).</p>
+<p>Al momento de escribir esta página (abril de 2022) están listados en <a rel="noreferrer" target="_blank" href="http://Jamstack.org">Jamstack.org</a> <a rel="noreferrer" target="_blank" href="https://jamstack.org/generators/">333 generadores</a> que usan 45 lenguajes distintos de base y algunos más para las plantillas, por lo que tenemos de donde elegir según lo que querramos desarrollar y los lenguajes/frameworks con los que nos sintamos más cómodos. Esto puede ser una ventaja o un problema al decidir cual usar (yo probé varios antes de elegir Eleventy).</p>
 <p><strong>Nota:</strong> Existen varias formas de agregar contenido dinámico a un sitio que en principio es estático, por ejemplo utilizando algunas utilidades (incluyendo bases de datos) "serverless". Hay varios artículos interesantes sobre este tema en <a rel="noreferrer" target="_blank" href="https://css-tricks.com/tag/serverless/">CSS-tricks</a>.</p>
 </section>
 
@@ -117,8 +154,24 @@
     
 
 
+
+
+<footer class="flex flex-row flex-wrap justify-between pt-2 pb-4 px-4 bg-gradient-to-br from-blue-500/50 to-blue-900/90">
+
+        
+            <div class="h-1 w-1 invisible"></div>
+        
+
+        
+            <a href="/programacion/notas/eleventy1/" class="px-2 md:px-4 py-1 md:py-2 bg-blue-200 dark:bg-blue-900 rounded-r-full rounded-l-lg border-2 border-blue-900 dark:border-blue-200">
+            Eleventy</a>
+        
+
+</footer>
+
+
+
     <script src="/js/script.js"></script>
 </body>
 
 </html>
-

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Docencia</title>
+    <link rel="shortcut icon" href="/imagenes/fav2_32.png" type="image/png">
     <script>
         const pagina = document.getElementsByTagName("html");
 
@@ -21,85 +22,106 @@
     <link rel="stylesheet" href="/css/estilo.css">
 </head>
 
+
 <body id="inicio" class="select-none bg-stone-200 dark:bg-stone-800 text-stone-800 dark:text-stone-200">
-        <header id="header" class="hidden md:block pt-2 pb-4 bg-gradient-to-br from-blue-500/50 to-blue-900/90 text-center">
-        <h1 class="text-3xl text-lime-100 pt-2 pb-1">Eduardo Casanova</h1>
-        <h2 class="text-2xl text-lime-100 pt-2 pb-1">Programación y Docencia
-    </h2></header>
 
-    <nav class="flex justify-between md:justify-end bg-gradient-to-tr from-blue-400/50 to-blue-700/80">
-  <div class="md:hidden ml-4">
-    <a href="/" class="pt-2 text-center">
-      <h1 class="text-2xl text-lime-100">Eduardo Casanova</h1>
-    </a>
-  </div>
-  <div class="flex flex-row w-fit gap-4 px-4">
-  
-<div class="relative">
+    
 
-  <button id="Bdianoche" class="border-2 border-blue-800 dark:border-blue-400 bg-blue-200 rounded-full w-fit p-1 my-1 flex-end">
+    <div class="flex justify-between md:block bg-gradient-to-tr from-blue-100/30 to-blue-500/50 dark:from-blue-500/50 dark:to-blue-900/90 md:bg-none">
+
+  <header>
+    <div class="float-left md:hidden ml-4">
+      <a href="/" class="pt-2 flex justify-start">
+        <img class="inline dark:hidden" src="/imagenes/favicon_a_32.png" alt="icono" width="32">
+        <img class="hidden dark:inline" src="/imagenes/favicon_a_32_dark.png" alt="icono" width="32">
+        <h1 class="text-2xl">Eduardo Casanova</h1>
+      </a>
+
+    </div>
+    <div class="hidden md:flex flex-row justify-center items-center pt-2 pb-4 bg-gradient-to-br from-blue-500/50 to-blue-900/90 text-center">
+      <div>
+        <img class="inline dark:hidden" src="/imagenes/favicon_a_32.png" alt="icono" width="64">
+        <img class="hidden dark:inline" src="/imagenes/favicon_a_32_dark.png" alt="icono" width="64">
+      </div>
+      <div>
+        <h1 class="text-3xl pt-2 pb-1">Eduardo Casanova</h1>
+        <h2 class="text-2xl pt-2 pb-1">Programación y Docencia</h2>
+      </div>
+    </div>
+  </header>
+
+  <div class="flex justify-end">
+    <div class="flex flex-row w-fit gap-4 px-4 md:px-0">
+      <div class="md:absolute md:top-4 md:right-4">
+        <div class="relative">
+
+  <button id="Bdianoche" class="border-2 border-blue-800 dark:border-blue-400 bg-blue-200 rounded-full w-fit p-1 my-1 flex-end active:scale-110 origin-center">
     <div class="relative">
-
       <img alt="" width="28" src="/imagenes/icons8-día-y-noche-100.png">
-
     </div>
   </button>
+  <div id="Mdianoche" class="absolute right-0 top-12 z-20 scale-0 origin-top-left transition-all flex-col bg-blue-500 border-blue-800 dark:border-blue-400 rounded-xl pr-4">
+    <p class="bg-blue-300 dark:bg-blue-600 hover:bg-blue-900 hover:text-blue-200 dark:hover:bg-blue-300 dark:hover:text-blue-900 rounded-xl px-4 active:scale-110 origin-center" data-dark="dia">Día</p>
+    <p class="bg-blue-300 dark:bg-blue-600 hover:bg-blue-900 hover:text-blue-200 dark:hover:bg-blue-300 dark:hover:text-blue-900 rounded-xl px-4 active:scale-110 origin-center" data-dark="noche">Noche</p>
+    <p class="bg-blue-300 dark:bg-blue-600 hover:bg-blue-900 hover:text-blue-200 dark:hover:bg-blue-300 dark:hover:text-blue-900 rounded-xl px-4 active:scale-110 origin-center" data-dark="sistema">Sistema</p>
+  </div>
+</div>
+      </div>
+      <nav class="flex flex-col items-end md:items-center">
+        <button class="md:hidden rounded-lg m-2" id="Bmenu">
+          <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
+            <path id="b-ham" fill-rule="evenodd" d="M3 5a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd" />
+            <path id="b-cruz" class="hidden" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
+        <div id="menu" class="absolute md:relative -translate-y-96 translate-x-96 md:translate-x-0 md:translate-y-0 mt-10 md:mt-0 px-8 py-4 md:py-0 md:h-12 transition-transform bg-gradient-to-tr from-blue-400/75 to-blue-700/90 md:bg-blue-50/0 rounded-xl md:rounded-none md:rounded-bl-2xl">
+          <div class="flex flex-col md:flex-row gap-x-2">
+            
+            <a href="/" class="w-28 my-1 md:my-2 border-2 border-blue-100 rounded-lg text-blue-100 bg-blue-500 text-center hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+              Inicio
+            </a>
 
-    <div id="Mdianoche" class="absolute -left-8 top-0 z-20 scale-0 origin-top-left transition-all flex-col bg-blue-500 border-blue-800 dark:border-blue-400 rounded-xl pr-4">
-      <p class="bg-blue-600 hover:bg-blue-900 rounded-xl px-4" data-dark="dia">Día</p>
-      <p class="bg-blue-600 hover:bg-blue-900 rounded-xl px-4" data-dark="noche">Noche</p>
-      <p class="bg-blue-600 hover:bg-blue-900 rounded-xl px-4" data-dark="sistema">Sistema</p>
-    </div>
-</div> 
+            
+            
+            <a href="/acerca/" class="w-28 my-1 md:my-2 border-2 border-blue-100 rounded-lg text-blue-100 bg-blue-500 text-center hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+              Acerca
+            </a>
 
-  <div class="flex flex-col items-end md:items-center">
-    <button class="md:hidden rounded-lg m-2" id="boton">
-      <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
-        <path id="b-ham" class="text-lime-100" fill-rule="evenodd" d="M3 5a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h22a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd" />
-        <path id="b-cruz" class="hidden text-lime-100" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-      </svg>
-    </button>
-    <div id="menu" class="absolute md:relative -translate-y-96 translate-x-96 md:translate-x-0 md:translate-y-0 mt-10 md:mt-0 px-8 py-4 md:py-0 md:h-12 transition-transform bg-gradient-to-tr from-blue-400/75 to-blue-700/90 md:bg-blue-50/0 rounded-xl">
-      <div class="flex flex-col md:flex-row gap-x-2">
-        
-        <a href="/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
-          Inicio
-        </a>
+            
+            
+            <a href="/docencia/" class="w-28 my-1 md:my-2 border-2 border-blue-100 rounded-lg text-blue-100 bg-blue-700 text-center hover:bg-blue-900 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+              Docencia
+            </a>
+            
+            
+            <a href="/programacion/" class="w-28 my-1 md:my-2 border-2 border-blue-100 rounded-lg text-blue-100 bg-blue-500 text-center hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+              Programación
+            </a>
 
-        
-        
-        <a href="/acerca/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
-          Acerca
-        </a>
+            
+            
+            <a href="/varios/" class="w-28 my-1 md:my-2 border-2 border-blue-100 rounded-lg text-blue-100 bg-blue-500 text-center hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
+              Varios
+            </a>
 
-        
-        
-        <a href="/docencia/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-700 text-center hover:text-lime-200 hover:bg-blue-900 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
-          Docencia
-        </a>
-        
-        
-        <a href="/programacion/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
-          Programación
-        </a>
-
-        
-        
-        <a href="/varios/" class="w-28 my-1 md:my-2 border-2 border-blue-100 text-lime-200 rounded-lg bg-blue-500 text-center hover:text-lime-200 hover:bg-blue-700 -skew-x-12 hover:scale-105 hover:-skew-x-6 duration-300 ease-in-out">
-          Varios
-        </a>
-
+            </div>
         </div>
+      </nav>
     </div>
   </div>
 </div>
 
-</nav>
+    
+    
+
+    
+
+
     <div class="float-right text-base mr-4 md:mr-8 mt-2 mb-0"></div>
     <main class="container mx-auto md:px-8">
         <h1>Docencia</h1>
 <p>En esta sección incluyo material que voy creando para mis clases. Esto incluye teorías, ejercicios resueltos y algunas herramientas relacionadas.</p>
-<p>Iré incluyendo más material a medida que tenga tiempo de pasarlo desde el papel (antes de la cuarentena mis clases eran presenciales, o sea con lápiz y papel) o de convertir el formato de lo que hice en pdf y <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> .</p>
+<p>Iré incluyendo más material a medida que haga tiempo de pasarlo desde el papel (antes de la cuarentena mis clases eran presenciales, o sea con lápiz y papel) o de convertir el formato de lo que tengo hecho en pdf y <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em;"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em;"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em;"><span style="top:-2.904999em;"><span class="pstrut" style="height:2.7em;"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em;"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em;"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46782999999999997em;"><span style="top:-2.7845em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em;"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em;"></span><span class="mord textrm">X</span></span></span></span></span></span> .</p>
 <section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Mis materias</h2>
 <p>Estas son las materias principales sobre las que doy clases.</p>
 <p>Si la que te interesa no está listada, pero te parece que es similar a alguna de las presentes, <a href="/acerca/#contacto">comunicate conmigo</a></p>
@@ -130,7 +152,7 @@
 <li>Mecánica</li>
 <li>Termodinámica</li>
 <li>Optica</li>
-<li>Electicidad y magnetismo</li>
+<li>Electricidad y magnetismo</li>
 <li>Biofísica</li>
 </ul>
 </li>
@@ -154,7 +176,8 @@
 <li>
 <p><a rel="noreferrer" target="_blank" href="https://educas.shinyapps.io/Probabilidades-Normal/Probabilidades-Normal.Rmd">Calculadora gráfica para intervalos de confianza y test de hipótesis sobre la <strong>distribución normal</strong></a></p>
 <p>La herramienta permite descargar el gráfico obtenido.
-Está programada en Shiny (interfaz web para el lenguaje R).</p>
+Está programada en Shiny (interfaz web para el lenguaje R).<br>
+<em>Nota:</em> esta aplicación no está optimizada para el uso en pantallas chicas.</p>
 </li>
 </ul>
 </section>
@@ -168,8 +191,12 @@ Está programada en Shiny (interfaz web para el lenguaje R).</p>
     
 
 
+
+    <footer class="h-12"></footer>
+
+
+
     <script src="/js/script.js"></script>
 </body>
 
 </html>
-

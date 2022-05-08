@@ -4,23 +4,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eduardo Casanova</title>
     <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="shortcut icon" href="/imagenes/fav2_32.png" type="image/png">
+    <script>
+        const pagina = document.getElementsByTagName("html");
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            pagina[0].classList.add('dark')
+        } else {
+            pagina[0].classList.remove('dark')
+        }
+    </script>
 </head>
 
-<body class="portada h-screen min-h-fit select-none bg-stone-200 dark:bg-stone-800">
+<body class="relative h-screen min-h-fit select-none bg-stone-200 dark:bg-stone-800 text-stone-800 dark:text-stone-200">
+   
     <header class="pt-2 pb-4 bg-gradient-to-br from-blue-600/50 to-blue-900/80 text-center">
-        <h1 class="text-4xl text-lime-200">Eduardo Casanova</h1>
-        <h2 class="text-3xl text-lime-200">Programación y Docencia
+        <h1 class="text-4xl">Eduardo Casanova</h1>
+        <h2 class="text-3xl">Programación y Docencia
+        <div class="absolute top-4 right-4">
+            <div class="relative">
+
+  <button id="Bdianoche" class="border-2 border-blue-800 dark:border-blue-400 bg-blue-200 rounded-full w-fit p-1 my-1 flex-end active:scale-110 origin-center">
+    <div class="relative">
+      <img alt="" width="28" src="/imagenes/icons8-día-y-noche-100.png">
+    </div>
+  </button>
+  <div id="Mdianoche" class="absolute right-0 top-12 z-20 scale-0 origin-top-left transition-all flex-col bg-blue-500 border-blue-800 dark:border-blue-400 rounded-xl pr-4">
+    <p class="bg-blue-300 dark:bg-blue-600 hover:bg-blue-900 hover:text-blue-200 dark:hover:bg-blue-300 dark:hover:text-blue-900 rounded-xl px-4 active:scale-110 origin-center" data-dark="dia">Día</p>
+    <p class="bg-blue-300 dark:bg-blue-600 hover:bg-blue-900 hover:text-blue-200 dark:hover:bg-blue-300 dark:hover:text-blue-900 rounded-xl px-4 active:scale-110 origin-center" data-dark="noche">Noche</p>
+    <p class="bg-blue-300 dark:bg-blue-600 hover:bg-blue-900 hover:text-blue-200 dark:hover:bg-blue-300 dark:hover:text-blue-900 rounded-xl px-4 active:scale-110 origin-center" data-dark="sistema">Sistema</p>
+  </div>
+</div>
+        </div>
     </h2></header>
+
     <main class="container px-4 md:px-16">
 
         
 
-        <div class="mx-4 my-12 grid grid-flow-row auto-rows-max justify-evenly gap-4 md:gap-12 grid-cols-1 md:grid-cols-2">
+        <div class="ml-2 mr-8 my-12 grid grid-flow-row auto-rows-max justify-evenly gap-4 md:gap-12 grid-cols-1 md:grid-cols-2">
             
             <a href="/docencia/">
                 <div class="p-4 bg-gradient-to-br from-blue-600/25 to-blue-900/90 rounded-lg flex flex-col justify-center items-center origin-bottom -skew-x-12 hover:-skew-x-6 transition duration-300 ease-in-out">
-                    <h1 class="text-4xl font-bold text-lime-200">Docencia</h1>
-                    <h2 class="text-2xl text-lime-200">
+                    <h1 class="text-4xl font-bold">Docencia</h1>
+                    <h2 class="text-2xl">
                         
                         Teorías, ejercicios ...</h2>
                     
@@ -29,8 +56,8 @@
             
             <a href="/programacion/">
                 <div class="p-4 bg-gradient-to-br from-blue-600/25 to-blue-900/90 rounded-lg flex flex-col justify-center items-center origin-bottom -skew-x-12 hover:-skew-x-6 transition duration-300 ease-in-out">
-                    <h1 class="text-4xl font-bold text-lime-200">Programación</h1>
-                    <h2 class="text-2xl text-lime-200">
+                    <h1 class="text-4xl font-bold">Programación</h1>
+                    <h2 class="text-2xl">
                         
                         Tutoriales, programas ...</h2>
                     
@@ -39,8 +66,8 @@
             
             <a href="/acerca/">
                 <div class="p-4 bg-gradient-to-br from-blue-600/25 to-blue-900/90 rounded-lg flex flex-col justify-center items-center origin-bottom -skew-x-12 hover:-skew-x-6 transition duration-300 ease-in-out">
-                    <h1 class="text-4xl font-bold text-lime-200">Acerca de ...</h1>
-                    <h2 class="text-2xl text-lime-200">
+                    <h1 class="text-4xl font-bold">Acerca de ...</h1>
+                    <h2 class="text-2xl">
                         
                         Sobre mí y este sitio</h2>
                     
@@ -49,17 +76,18 @@
             
             <a href="/varios/">
                 <div class="p-4 bg-gradient-to-br from-blue-600/25 to-blue-900/90 rounded-lg flex flex-col justify-center items-center origin-bottom -skew-x-12 hover:-skew-x-6 transition duration-300 ease-in-out">
-                    <h1 class="text-4xl font-bold text-lime-200">Varios</h1>
-                    <h2 class="text-2xl text-lime-200">
+                    <h1 class="text-4xl font-bold">Varios</h1>
+                    <h2 class="text-2xl">
                         
-                    &nbsp;
+                        Otros temas</h2>
                     
-                </h2></div>
+                </div>
             </a>
             
         </div>
 
     </main>
+    <script src="/js/script.js"></script>
 
 
 </body></html>
