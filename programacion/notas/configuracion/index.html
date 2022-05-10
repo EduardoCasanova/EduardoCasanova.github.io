@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -138,7 +138,16 @@
 <p>Las configuraciones que siguen se refieren a los paquetes instalados en el paso anterior (<a href="../instalacion/">Instalación</a>).
 Si prefieren usar otros (por ej. Webpack en lugar de Snowpack, u otro CSS en vez de Tailwind) se deben crear los archivos correspondientes.</p>
 <p>Para que las herramientas que instalamos y sus plugins funcionen, y lo hagan coordinadamente, debemos crear y/o editar varios archivos de coniguración:</p>
-<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Node</h2>
+<div id="pos_1"></div>
+<section class="relative border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 pt-6 mb-4 mx-1 mt-16">
+<div class="absolute -top-8 flex flex-row justify-start">  
+<p><a class="absolute top-0 -left-1" href="#inicio"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400 rotate-180" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a><a class="absolute top-8 -left-1" href="#pos_2"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a></p>
+<h2 class="w-fit ml-4 px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">1 - Node</h2>
+</div>    
 <p>En este caso los scripts son mínimos ya que le paso el trabajo a Snowpack.</p>
 <p><code>package.json</code></p>
 <pre class="language-json"><code class="language-json"><span class="token property">"browserslist"</span><span class="token operator">:</span> <span class="token string">"&gt; 0.5%, last 2 versions, not dead"</span><span class="token punctuation">,</span><br><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"npm run dev"</span><span class="token punctuation">,</span><br>    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"snowpack dev"</span><span class="token punctuation">,</span><br>    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"snowpack build"</span><br><span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
@@ -147,7 +156,16 @@ Si prefieren usar otros (por ej. Webpack en lugar de Snowpack, u otro CSS en vez
 <p>Con mi configuración la cobertura de navegadores en Argentina sería:</p>
 <pre class="language-txt"><code class="language-txt">&gt;&gt; npx browserslist --coverage="AR"<br> &gt;&gt; These browsers account for 92.24% of all users in the AR</code></pre>
 </section>
-<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Snowpack</h2>
+<div id="pos_2"></div>
+<section class="relative border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 pt-6 mb-4 mx-1 mt-16">
+<div class="absolute -top-8 flex flex-row justify-start">  
+<p><a class="absolute top-0 -left-1 activated:" href="#pos_1"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400 rotate-180" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a><a class="absolute top-8 -left-1" href="#pos_3"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a></p>
+<h2 class="w-fit ml-4 px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">2 - Snowpack</h2>
+</div>    
 <p>Este guía la construcción del sitio, haciendo llamadas a las herramientas necesarias en el orden que dispongamos.</p>
 <p>Ver la <a rel="noreferrer" target="_blank" href="https://www.snowpack.dev/reference/configuration">Documentación</a></p>
 <p><code>snowpack.config.js</code></p>
@@ -160,21 +178,46 @@ Uso <em>@snowpack/plugin-run-script</em> para poner en marcha Eleventy en dos pa
 <p><strong>optimize</strong> indica que en la etapa de "build" voy a procesar el código (recopilación, transpilación y minificación) con  <em>esbuild</em> y se le pasan las opciones correspondientes.<br>
 Si se desea usar para esto Webpack o Rollup se usan los plugins correspondientes (en este caso no se necesita configurar estos "bundlers").</p>
 </section>
-<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Eleventy</h2>
+<div id="pos_3"></div>
+<section class="relative border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 pt-6 mb-4 mx-1 mt-16">
+<div class="absolute -top-8 flex flex-row justify-start">  
+<p><a class="absolute top-0 -left-1 activated:" href="#pos_2"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400 rotate-180" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a><a class="absolute top-8 -left-1" href="#pos_4"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a></p>
+<h2 class="w-fit ml-4 px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">3 - Eleventy</h2>
+</div>    
 <p>Ver la <a rel="noreferrer" target="_blank" href="https://www.11ty.dev/docs/config/">Documentación</a></p>
 <p><code>eleventy.js</code></p>
 <pre class="language-js"><code class="language-js">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">eleventyConfig</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><br>  <span class="token comment">// retraso en el procesamiento al modificar archivos</span><br>  <span class="token comment">// para cuando se guardan varios simultáneamente</span><br>  eleventyConfig<span class="token punctuation">.</span><span class="token function">setWatchThrottleWaitTime</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>  <span class="token comment">// indico el directorio de origen y el de destino </span><br>  <span class="token keyword">return</span> <span class="token punctuation">{</span><br>    <span class="token literal-property property">dir</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>      <span class="token literal-property property">input</span><span class="token operator">:</span> <span class="token string">"src"</span><span class="token punctuation">,</span><br>      <span class="token literal-property property">output</span><span class="token operator">:</span> <span class="token string">"eleventy"</span><span class="token punctuation">,</span><br>    <span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
-<p>En pasos posteriores esta configuración se amplía (y mucho) al agregar plugins, "shortcodes" y otros elementos.</p>
+<p>En pasos posteriores esta configuración se amplía (y mucho) al agregar "plugins", "shortcodes" y otros elementos.</p>
 <p>Un detalle importante es que el directorio de salida de eleventy actúa como un punto intermedio para continuar luego con otros procesos.</p>
 </section>
-<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">PostCSS</h2>
+<div id="pos_4"></div>
+<section class="relative border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 pt-6 mb-4 mx-1 mt-16">
+<div class="absolute -top-8 flex flex-row justify-start">  
+<p><a class="absolute top-0 -left-1 activated:" href="#pos_3"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400 rotate-180" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a><a class="absolute top-8 -left-1" href="#pos_5"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a></p>
+<h2 class="w-fit ml-4 px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">4 - PostCSS</h2>
+</div>    
 <p><a rel="noreferrer" target="_blank" href="https://github.com/postcss/postcss">Documentación</a></p>
 <p>Es interesante revisar la lista de plugins disponibles.</p>
 <p><code>postcss.config.js</code></p>
 <pre class="language-js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span><br>  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">{</span><br>    <span class="token literal-property property">tailwindcss</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>    <span class="token literal-property property">autoprefixer</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span><br>  <span class="token punctuation">}</span><span class="token punctuation">,</span><br><span class="token punctuation">}</span></code></pre>
 <p>En este caso (para empezar) uso una configuración mínima, indicando solo los plugins a usar con sus opciones por defecto (las {}).</p>
 </section>
-<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">TailwindCSS</h2>
+<div id="pos_5"></div>
+<section class="relative border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 pt-6 mb-4 mx-1 mt-16">
+<div class="absolute -top-8 flex flex-row justify-start">  
+<p><a class="absolute top-0 -left-1" href="#pos_4"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400 rotate-180" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a></p>
+<h2 class="w-fit ml-4 px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">5 - TailwindCSS</h2>
+</div>    
 <p><a rel="noreferrer" target="_blank" href="https://tailwindcss.com/docs/installation/using-postcss">Documentación (como plugin de PostCSS)</a>.</p>
 <p>El archivo de configuración básico se genera con <code>npx tailwindcss init</code></p>
 <p><em>Nota:</em> Si se usa la instrucción <code>npx tailwindcss init -p</code> también se crea <em>postcss.config.js</em></p>

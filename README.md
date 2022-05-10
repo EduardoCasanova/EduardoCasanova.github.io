@@ -1,6 +1,7 @@
 # EduardoCasanova.github.io
 
-Sitio donde se presentan mis trabajos de programación y docencia, además de mi curriculum e información de contacto.   
-También iré subiendo otros temas que crea relacionados.
+En este sitio presento algunos de mis trabajos relacionados con la programación y la docencia.
+   
+También iré subiendo material de otros temas que crea relacionados.
 
-La versión actual del sitio está realizada con Eleventy, TailwindCSS, Snowpack y otras tecnologías relacionadas.
+La versión actual del sitio está realizada con Eleventy, TailwindCSS, Snowpack, Katex y otras tecnologías relacionadas.

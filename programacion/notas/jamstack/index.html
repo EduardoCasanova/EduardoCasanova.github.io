@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -134,7 +134,11 @@
     <main class="container mx-auto md:px-8">
         <h1>Introducción a Jamstack.</h1>
 <p>Con estos comentarios inicio una serie sobre el uso de <a rel="noreferrer" target="_blank" href="https://www.11ty.dev/">eleventy</a>, en base a las notas que fuí tomando al desarrollar varios sitios usando este <strong>SSG</strong> (generador de sitios estáticos), y al actualizar este.</p>
-<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Introducción</h2>
+<div></div>
+<section class="relative border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 pt-6 mb-4 mx-1 mt-16">
+<div class="absolute -top-8 flex flex-row justify-start">  
+<h2 class="w-fit ml-4 px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100"> - Introducción</h2>
+</div>    
 <p>En muchos casos en que debemos crear un sitio encontramos que todo o parte de su contenido es estático, es decir que siempre el servidor va a entregar las mismas páginas (aunque puede haber algunos cambios según el cliente), no necesitando acceso a bases de datos, ni procesamiento en el backend.</p>
 <p>Por la experiencia obtenida en mi sitio personal, que nació como recopilación de material que preparo para mis alumnos, encuentro que al ir creciendo el mismo  se dificulta su mantenimiento. Por ejemplo mantener un estilo uniforme, hay que revisar varias páginas al agregar o cambiar enlaces internos, o hacer algún cambio en la estructura de directorios, etc.</p>
 <p>Aquí es donde puede resultar útil el uso de un SSG, sobre todo si el contenido abarca varias páginas, con agregados y modificaciones periódicas. Por ejemplo en la creación de blogs y similares, aunque no limitándose a ellos.</p>

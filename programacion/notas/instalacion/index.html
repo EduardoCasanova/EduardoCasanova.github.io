@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -135,7 +135,16 @@
     <div class="float-right text-base mr-4 md:mr-8 mt-2 mb-0">1 de mayo de 2022</div>
     <main class="container mx-auto md:px-8">
         <h1>Instalación</h1>
-<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Introducción</h2>
+<div id="pos_1"></div>
+<section class="relative border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 pt-6 mb-4 mx-1 mt-16">
+<div class="absolute -top-8 flex flex-row justify-start">  
+<p><a class="absolute top-0 -left-1" href="#inicio"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400 rotate-180" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a><a class="absolute top-8 -left-1" href="#pos_2"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a></p>
+<h2 class="w-fit ml-4 px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">1 - Introducción</h2>
+</div>    
 <p>Para lo que sigue necesitamos tener instalado (y actualizado <strong>node</strong>), saber trabajar sobre el mismo.
 Por costumbre utilizo <strong>npm</strong>, pero no hay mucha diferencia si están más acostumbrados a <strong>yarn</strong>.</p>
 <p>Los paquetes principales que utilizo para comenzar (luego agrego otros para fines específicos) son:</p>
@@ -149,7 +158,16 @@ Por costumbre utilizo <strong>npm</strong>, pero no hay mucha diferencia si est�
 <p>Si se sienten más cómodos con otro entorno no es muy dificil la configuración.</p>
 <p>En otros sitios sobre los que estoy trabajando uso distintas combinaciones, somo ser Parcel o scripts de node o Gulp en lugar de Snowpack, estilos con SCss, etc. Lo que tienen en común es el uso de Eleventy.</p>
 </section>
-<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Instalación</h2>
+<div id="pos_2"></div>
+<section class="relative border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 pt-6 mb-4 mx-1 mt-16">
+<div class="absolute -top-8 flex flex-row justify-start">  
+<p><a class="absolute top-0 -left-1 activated:" href="#pos_1"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400 rotate-180" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a><a class="absolute top-8 -left-1" href="#pos_3"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a></p>
+<h2 class="w-fit ml-4 px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">2 - Instalación</h2>
+</div>    
 <p>Una vez creado el directorio en el voy a trabajar y ubicado sobre el mismo.</p>
 <p>Creo el <em>package.json</em> del sitio:</p>
 <p><code>npm init -y</code></p>
@@ -164,7 +182,14 @@ Por costumbre utilizo <strong>npm</strong>, pero no hay mucha diferencia si est�
 <p>Estas vulnerabilidades tienen que ver con un par de paquetes que usa eleventy. Como la reparación conlleva el uso de una versión muy antigua de eleventy lo dejo como está.</p>
 <p>Estas vulnerabilidades serían importantes si perjudicaran al código final,  pero en nuestro caso no lo afectan.</p>
 </section>
-<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Estructura de directorios</h2>
+<div id="pos_3"></div>
+<section class="relative border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 pt-6 mb-4 mx-1 mt-16">
+<div class="absolute -top-8 flex flex-row justify-start">  
+<p><a class="absolute top-0 -left-1" href="#pos_2"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400 rotate-180" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a></p>
+<h2 class="w-fit ml-4 px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">3 - Estructura de directorios</h2>
+</div>    
 <p>En esto eleventy es muy flexible, no requiere de ninguna estructura en especial.</p>
 <p>En mi caso, para tener las cosas ordenadas preparo el siguiente arbol de directorios:</p>
 <pre class="language-txt"><code class="language-txt"><br>directorio raiz<br>├── node_modules<br>├── build                 el sitio listo para publicar         <br>├── eleventy              etapa intermedia luego de procesar con Eleventy<br>├── recursos            <br>│   ├── css               estilos extras como ser los de Katex o Prism<br>│   ├── fuentes         <br>│   └── imagenes  <br>├── src                 <br>│   ├── acerca<br>│   ├── css               los estilos propios<br>│   ├── _data             datos globales<br>│   ├── docencia<br>│   ├── _includes       <br>│   │   ├── componentes   botones,  <br>│   │   └── secciones     partes de la página: head, header, nav, footer<br>│   ├── js                javascript del sitio<br>│   ├── programacion      <br>│   ├── varios<br>│   └── index.html, 404.html<br>├── varios                partes que no quiero que procese eleventy<br>└── archivos de configuración, package.json, .gitignore, etc. <br><br>Los directorios _acerca_, _docencia_, _programación_ y _varios_ son propios de mi sitio.<br></code></pre>

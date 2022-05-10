@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -133,13 +133,29 @@
     <div class="float-right text-base mr-4 md:mr-8 mt-2 mb-0">28 de abril de 2022</div>
     <main class="container mx-auto md:px-8">
         <h1>Sitios estáticos con Eleventy</h1>
-<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Introducción</h2>
+<div id="pos_1"></div>
+<section class="relative border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 pt-6 mb-4 mx-1 mt-16">
+<div class="absolute -top-8 flex flex-row justify-start">  
+<p><a class="absolute top-0 -left-1" href="#inicio"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400 rotate-180" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a><a class="absolute top-8 -left-1" href="#pos_2"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a></p>
+<h2 class="w-fit ml-4 px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">1 - Introducción</h2>
+</div>    
 <p><a rel="noreferrer" target="_blank" href="https://www.11ty.dev/">Eleventy</a> es un generador de sitios estáticos (SGG) basado en javascript, sin frameworks agregados (aunque se usa sin problemas junto con React, Vue, Lit, Laravel, etc.), y que puede utilizar una gran variedad de otros lenguajes en distintas tareas (HTML, Markdown, Liquid, Nunjucks, Handlebars, Mustache, EJS, Haml, Pug, Toml, Yaml, etc.), solos o combinados, así como CSS, Sass, Scss o PostCss.</p>
 <p>Yo utilizo principalmente una combinación de javascript, html, markdown y nunjucks (y distintas formas de CSS, SCss o PostCss según el proyecto, para este TailwindCSS usado como plugin de PostCSS).</p>
 <p>Si no se quieren complicar con la programación les sugiero que directamente elijan una <strong>plantilla</strong> que se adapte a sus gustos. Pueden encontrar muchas de ellas en la sección <a rel="noreferrer" target="_blank" href="https://www.11ty.dev/docs/starter/">starters</a> del sitio oficial y varias más con una búsqueda en la web.</p>
 <p>Los "starters" varían en complejidad y en las herramientas que ya tienen instalados, desde los más básicos, con un esqueleto mínimo, hasta los más completos que solo necesitan que se agregue el contenido propio, y a lo sumo personalizar los estilos.</p>
 </section>
-<section class="border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 mb-4 mx-1 mt-16"><h2 class="-mt-12 w-fit px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">Requisitos previos</h2>
+<div id="pos_2"></div>
+<section class="relative border-2 border-blue-900 dark:border-blue-400 rounded-3xl p-4 pt-6 mb-4 mx-1 mt-16">
+<div class="absolute -top-8 flex flex-row justify-start">  
+<p><a class="absolute top-0 -left-1" href="#pos_1"><svg class="w-6 h-6 text-blue-700 dark:text-blue-400 rotate-180" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 24 24" stroke="currentColor">
+<path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+</svg></a></p>
+<h2 class="w-fit ml-4 px-4 py-2 border-2 border-blue-900 dark:border-blue-400 rounded-2xl bg-stone-200 dark:bg-stone-800 text-blue-900 dark:text-blue-100">2 - Requisitos previos</h2>
+</div>    
 <p>Para que estas páginas sean de utilidad creo que se necesita un conocimiento al menos básico de programación web, principalmente HTML, javascript y CSS.</p>
 <p>Markdown y Nunjucks son relativamente fáciles de aprender, así que algunas cosas de ellos las veremos sobre la marcha.</p>
 <p>También se requiere tener instalado <a rel="noreferrer" target="_blank" href="https://nodejs.org/">node</a> y es preferible usar algún sistema de control de versiones como <strong>git</strong>.</p>
