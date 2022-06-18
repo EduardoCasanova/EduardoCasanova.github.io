@@ -4,7 +4,7 @@
 let body = document.getElementsByTagName('body')[0];
 
 if (body.id == 'inicio') {
-// lo que sigue se usa en todas las páginas menos la inicial
+    // lo que sigue se usa en todas las páginas menos la inicial
     // navbar
 
     const menu = document.getElementById("menu");
@@ -44,7 +44,6 @@ const Bdianoche = document.getElementById("Bdianoche");
 const Mdianoche = document.getElementById("Mdianoche");
 
 Bdianoche.addEventListener("click", () => {
-    console.log("Bdianoche click");
     Mdianoche.classList.toggle("scale-0");
     Mdianoche.classList.toggle("scale-1");
 });
@@ -72,3 +71,31 @@ Mdianoche.addEventListener("mouseleave", () => {
     Mdianoche.classList.remove("scale-1");
     Mdianoche.classList.add("scale-0");
 });
+
+// Efectos (transiciones)
+
+if (document.getElementsByClassName('efecto1').length > 0) {
+    let t = document.querySelectorAll("h1.efecto1")[0];
+
+    const mover1 = (t) => {
+        t.classList.remove("-translate-x-96");
+        t.classList.add("translate-x-24");    
+    };
+    setTimeout(mover1, 300, t);
+};
+
+if (document.getElementsByClassName('efecto4').length > 0) {
+    let lineas4 = document.querySelectorAll(".efecto4 p");
+
+    const mover4 = (linea) => {
+        linea.classList.remove("-rotate-90","scale-0","-translate-x-96");
+        linea.classList.add("translate-x-24");    
+    
+    };
+
+    i = 0;
+    for (let linea of lineas4) {
+        setTimeout(mover4, i * 300, linea);
+        i++;
+    };
+};
