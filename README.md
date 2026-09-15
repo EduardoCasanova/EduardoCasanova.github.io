@@ -10,5 +10,5 @@ La versión actual del sitio está realizada con Eleventy, TailwindCSS, Snowpack
 
 Desde enero de 2023 el desarrollo continúa en dominio propio:
 
-[educas.com.ar](educas.com.ar)
+[educas.com.ar](https://educas.com.ar)
 
